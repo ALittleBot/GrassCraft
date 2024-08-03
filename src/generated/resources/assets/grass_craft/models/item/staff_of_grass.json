@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "grass_craft:item/staff_of_grass"
+  }
+}

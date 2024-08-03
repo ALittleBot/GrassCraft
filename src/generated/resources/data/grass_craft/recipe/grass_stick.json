@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "grass_craft",
+  "key": {
+    "n": {
+      "item": "minecraft:short_grass"
+    }
+  },
+  "pattern": [
+    "n",
+    "n"
+  ],
+  "result": {
+    "count": 4,
+    "id": "grass_craft:grass_stick"
+  }
+}
