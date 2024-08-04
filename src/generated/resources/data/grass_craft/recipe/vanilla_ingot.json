@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "grass_craft:vanilla"
+    },
+    {
+      "item": "grass_craft:vanilla"
+    },
+    {
+      "item": "grass_craft:vanilla"
+    },
+    {
+      "item": "grass_craft:vanilla"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "grass_craft:vanilla_ingot"
+  }
+}

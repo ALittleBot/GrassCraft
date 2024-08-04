@@ -23,6 +23,7 @@ public class GrassCreativeTab {
                     output.accept(GrassItems.GRASS_BALL_ITEM.get());
                     output.accept(GrassItems.STAFF_OF_GRASS_ITEM.get());
                     output.accept(GrassItems.VANILLA_ITEM.get());
+                    output.accept(GrassItems.VANILLA_INGOT_ITEM.get());
                 }).build());
     }
 }

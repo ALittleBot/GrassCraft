@@ -44,6 +44,11 @@ public class GrassRecipeProvider {
                             200
                     ).unlockedBy(getHasName(Items.SHORT_GRASS), has(Items.SHORT_GRASS))
                     .save(recipeOutput);
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GrassItems.VANILLA_INGOT_ITEM.get(), 1)
+                    .requires(Items.COPPER_INGOT, 4)
+                    .requires(GrassItems.VANILLA_ITEM.get(), 4)
+                    .unlockedBy(getHasName(GrassItems.VANILLA_ITEM.get()), has(GrassItems.VANILLA_ITEM.get()))
+                    .save(recipeOutput);
         }
     }
 }
