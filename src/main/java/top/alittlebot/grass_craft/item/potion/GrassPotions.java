@@ -11,6 +11,9 @@ import top.alittlebot.grass_craft.effect.GrassEffects;
 public class GrassPotions {
     public static final DeferredRegister<Potion> POTIONS = DeferredRegister.Items.create(Registries.POTION, GrassCraft.MOD_ID);
 
+    public static final String POTION_KEY = "item.minecraft.potion.effect.";
+    public static final String SPLASH_POTION_KEY = "item.minecraft.splash_potion.effect.";
+    public static final String LINGERING_POTION_KEY = "item.minecraft.lingering_potion.effect.";
     public static final String GRASS_POTION_ID = "grass_potion";
 
     public static final Holder<Potion> GRASS_POTION;
