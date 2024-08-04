@@ -18,13 +18,14 @@ public class GrassItemModelProvider {
 
     public static class ModItemModelProvider extends ItemModelProvider {
         public ModItemModelProvider(PackOutput gen, ExistingFileHelper helper) {
-            super(gen, GrassCraft.MODID, helper);
+            super(gen, GrassCraft.MOD_ID, helper);
         }
 
         @Override
         protected void registerModels() {
-            this.singleTexture(GrassItems.GRASS_STICK_ID, ResourceLocation.withDefaultNamespace("item/generated"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MODID, "item/" + GrassItems.GRASS_STICK_ID));
-            this.singleTexture(GrassItems.STAFF_OF_GRASS_ID, ResourceLocation.withDefaultNamespace("item/handheld"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MODID, "item/" + GrassItems.STAFF_OF_GRASS_ID));
+            this.singleTexture(GrassItems.GRASS_STICK_ID, ResourceLocation.withDefaultNamespace("item/generated"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.GRASS_STICK_ID));
+            this.singleTexture(GrassItems.STAFF_OF_GRASS_ID, ResourceLocation.withDefaultNamespace("item/handheld"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.STAFF_OF_GRASS_ID));
+            this.singleTexture(GrassItems.GRASS_BALL_ID, ResourceLocation.withDefaultNamespace("item/generated"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.GRASS_BALL_ID));
         }
     }
 }

@@ -6,17 +6,21 @@ import top.alittlebot.grass_craft.datagen.GrassItemModelProvider;
 import top.alittlebot.grass_craft.datagen.GrassLanguageProvider;
 import top.alittlebot.grass_craft.datagen.GrassRecipeProvider;
 import top.alittlebot.grass_craft.effect.GrassEffects;
+import top.alittlebot.grass_craft.item.GrassCreativeTab;
 import top.alittlebot.grass_craft.item.GrassItems;
 
-@Mod(GrassCraft.MODID)
+@Mod(GrassCraft.MOD_ID)
 public class GrassCraft {
-    public static final String MODID = "grass_craft";
+
+    public static final String MOD_ID = "grass_craft";
 
     public GrassCraft(IEventBus modEventBus) {
-        GrassItems.registerItems(modEventBus);
+        GrassItems.ITEMS.register(modEventBus);
+        GrassEffects.EFFECTS.register(modEventBus);
+        GrassCreativeTab.TABS.register(modEventBus);
+
         modEventBus.addListener(GrassLanguageProvider::onGatherData);
         modEventBus.addListener(GrassItemModelProvider::onGatherData);
         modEventBus.addListener(GrassRecipeProvider::onGatherData);
-        GrassEffects.registerItems(modEventBus);
     }
 }

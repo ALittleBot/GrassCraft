@@ -10,13 +10,9 @@ import top.alittlebot.grass_craft.GrassCraft;
 
 public class GrassEffects {
     public static final String GROW_GRASS_ID = "grow_grass";
-    public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, GrassCraft.MODID);
+    public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, GrassCraft.MOD_ID);
 
     public static final DeferredHolder<MobEffect, GrowGrassEffect> GROW_GRASS = EFFECTS.register(GROW_GRASS_ID, () -> new GrowGrassEffect(
             MobEffectCategory.BENEFICIAL, 0x98D982
     ));
-
-    public static void registerItems(IEventBus modEventBus) {
-        EFFECTS.register(modEventBus);
-    }
 }

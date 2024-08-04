@@ -31,7 +31,7 @@ public class GrassRecipeProvider {
         @Override
         protected void buildRecipes(RecipeOutput recipeOutput) {
                 ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GrassItems.GRASS_STICK_ITEM.get(), 4)
-                        .group(GrassCraft.MODID)
+                        .group(GrassCraft.MOD_ID)
                         .define('n', Items.SHORT_GRASS)
                         .pattern("n")
                         .pattern("n")
