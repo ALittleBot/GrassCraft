@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import org.jetbrains.annotations.NotNull;
 import top.alittlebot.grass_craft.GrassCraft;
 import top.alittlebot.grass_craft.item.GrassItems;
 
@@ -29,7 +30,7 @@ public class GrassRecipeProvider {
         }
 
         @Override
-        protected void buildRecipes(RecipeOutput recipeOutput) {
+        protected void buildRecipes(@NotNull RecipeOutput recipeOutput) {
                 ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GrassItems.GRASS_STICK_ITEM.get(), 4)
                         .group(GrassCraft.MOD_ID)
                         .define('n', Items.SHORT_GRASS)

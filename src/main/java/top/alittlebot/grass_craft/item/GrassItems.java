@@ -1,7 +1,6 @@
 package top.alittlebot.grass_craft.item;
 
 import net.minecraft.world.item.Item;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import top.alittlebot.grass_craft.GrassCraft;

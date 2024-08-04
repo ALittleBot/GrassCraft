@@ -16,7 +16,7 @@ public class GrassCreativeTab {
 
     static {
         GRASS_TAB = TABS.register(GrassCraft.MOD_ID, () -> CreativeModeTab.builder()
-                .title(Component.translatable("item_group." + GrassCraft.MOD_ID + ".name"))
+                .title(Component.translatable(GRASS_TAB_ID))
                 .icon(() -> new ItemStack(Items.SHORT_GRASS))
                 .displayItems((parameters, output) -> {
                     output.accept(GrassItems.GRASS_STICK_ITEM.get());
