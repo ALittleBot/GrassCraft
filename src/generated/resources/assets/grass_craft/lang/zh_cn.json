@@ -1,5 +1,7 @@
 {
   "effect.grass_craft.grow_grass": "生草",
+  "item.grass_craft.grass_ball": "草球",
   "item.grass_craft.grass_stick": "草棍",
-  "item.grass_craft.staff_of_grass": "草之杖"
+  "item.grass_craft.staff_of_grass": "草之杖",
+  "item_group.grass_craft.name": "草栏"
 }
