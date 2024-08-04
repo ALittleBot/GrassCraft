@@ -5,7 +5,7 @@ import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import top.alittlebot.grass_craft.GrassCraft;
 import top.alittlebot.grass_craft.effect.GrassEffects;
-import top.alittlebot.grass_craft.item.GrassCreativeTab;
+import top.alittlebot.grass_craft.GrassCreativeTab;
 import top.alittlebot.grass_craft.item.GrassItems;
 import top.alittlebot.grass_craft.item.potion.GrassPotions;
 

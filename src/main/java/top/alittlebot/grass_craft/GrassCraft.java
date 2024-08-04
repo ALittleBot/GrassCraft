@@ -8,7 +8,6 @@ import top.alittlebot.grass_craft.datagen.GrassLanguageProvider;
 import top.alittlebot.grass_craft.datagen.GrassRecipeProvider;
 import top.alittlebot.grass_craft.effect.GrassEffects;
 import top.alittlebot.grass_craft.event.GrassRegisterBrewingRecipesEvent;
-import top.alittlebot.grass_craft.item.GrassCreativeTab;
 import top.alittlebot.grass_craft.item.GrassItems;
 import top.alittlebot.grass_craft.item.potion.GrassPotions;
 
