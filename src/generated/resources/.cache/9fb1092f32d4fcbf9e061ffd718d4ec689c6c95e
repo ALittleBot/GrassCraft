@@ -1,3 +1,5 @@
-// 1.21	2024-08-02T19:23:26.1109598	Recipes
+// 1.21	2024-08-04T18:54:33.2225572	Recipes
 45cdb1122154d574cc5c62556d1c2fe1bec5cbe9 data/grass_craft/advancement/recipes/misc/grass_stick.json
-1e175db43f36dac19ab175787b65ba46f5984b27 data/grass_craft/recipe/grass_stick.json
+42b20f239e3fc6b2f0f6117ba2723fddf8a4e81b data/grass_craft/advancement/recipes/misc/vanilla.json
+4cd2b80d25fd4a0304f1927defcc35a3ec2a3fbc data/grass_craft/recipe/grass_stick.json
+be31a3415f7b8011b988c8f7d81a661d777fbbcf data/grass_craft/recipe/vanilla.json

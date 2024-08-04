@@ -3,13 +3,13 @@
   "category": "misc",
   "group": "grass_craft",
   "key": {
-    "n": {
+    "#": {
       "item": "minecraft:short_grass"
     }
   },
   "pattern": [
-    "n",
-    "n"
+    "#",
+    "#"
   ],
   "result": {
     "count": 4,
