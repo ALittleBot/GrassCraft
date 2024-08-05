@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
+  "group": "grass_craft",
   "ingredients": [
     {
       "item": "minecraft:copper_ingot"

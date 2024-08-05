@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "grass_craft",
+  "key": {
+    "A": {
+      "item": "grass_craft:vanilla_ingot"
+    },
+    "B": {
+      "item": "grass_craft:grass_stick"
+    }
+  },
+  "pattern": [
+    "A",
+    "B",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "grass_craft:staff_of_grass"
+  }
+}

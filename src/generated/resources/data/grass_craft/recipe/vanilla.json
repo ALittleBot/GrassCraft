@@ -3,6 +3,7 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.1,
+  "group": "grass_craft",
   "ingredient": {
     "item": "minecraft:short_grass"
   },
