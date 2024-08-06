@@ -9,6 +9,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import top.alittlebot.grass_craft.block.GrassBlocks;
+import top.alittlebot.grass_craft.datagen.GrassBlockModelProvider;
 import top.alittlebot.grass_craft.datagen.GrassItemModelProvider;
 import top.alittlebot.grass_craft.datagen.GrassLanguageProvider;
 import top.alittlebot.grass_craft.datagen.GrassRecipeProvider;
@@ -35,6 +36,7 @@ public class GrassCraft {
         NeoForge.EVENT_BUS.register(GrassRegisterBrewingRecipesEvent.class);
 
         modEventBus.addListener(GrassLanguageProvider::onGatherData);
+        modEventBus.addListener(GrassBlockModelProvider::onGatherData);
         modEventBus.addListener(GrassItemModelProvider::onGatherData);
         modEventBus.addListener(GrassRecipeProvider::onGatherData);
     }

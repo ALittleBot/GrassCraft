@@ -1,6 +1,7 @@
-// 1.21	2024-08-04T19:28:13.1195547	Item Models: grass_craft
+// 1.21	2024-08-06T20:48:05.0294751	Item Models: grass_craft
 d1a7072e7991bc88ba2fbd3f8a4d10cb5fac2ac9 assets/grass_craft/models/item/grass_ball.json
 6a48274e82cdd7b06b3462791c6cf57989688eff assets/grass_craft/models/item/grass_stick.json
+57cbe289f2cd455fd0fb84bcf766be450ef91786 assets/grass_craft/models/item/grass_tnt.json
 6a3ae63aef63a314d91cbb8b5708a03f68627425 assets/grass_craft/models/item/staff_of_grass.json
 799199c711dbe8f38915af4ee66edade74b21ef2 assets/grass_craft/models/item/vanilla.json
 bbcfbd5b5b0c401ca49fbdcfd46209e20b81ba4e assets/grass_craft/models/item/vanilla_ingot.json

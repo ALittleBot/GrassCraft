@@ -17,6 +17,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.portal.DimensionTransition;
+import org.jetbrains.annotations.NotNull;
+import top.alittlebot.grass_craft.block.GrassBlocks;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -24,9 +26,6 @@ import java.util.Optional;
 public class GrassTNTEntity extends Entity implements TraceableEntity {
     private static final EntityDataAccessor<Integer> DATA_FUSE_ID;
     private static final EntityDataAccessor<BlockState> DATA_BLOCK_STATE_ID;
-    private static final int DEFAULT_FUSE_TIME = 80;
-    private static final String TAG_BLOCK_STATE = "block_state";
-    public static final String TAG_FUSE = "fuse";
     private static final ExplosionDamageCalculator USED_PORTAL_DAMAGE_CALCULATOR;
     @javax.annotation.Nullable
     private LivingEntity owner;
@@ -51,10 +50,10 @@ public class GrassTNTEntity extends Entity implements TraceableEntity {
 
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         builder.define(DATA_FUSE_ID, 80);
-        builder.define(DATA_BLOCK_STATE_ID, Blocks.GRASS_BLOCK.defaultBlockState());
+        builder.define(DATA_BLOCK_STATE_ID, GrassBlocks.GRASS_TNT_BLOCK.get().defaultBlockState());
     }
 
-    protected Entity.MovementEmission getMovementEmission() {
+    protected Entity.@NotNull MovementEmission getMovementEmission() {
         return MovementEmission.NONE;
     }
 
@@ -92,16 +91,13 @@ public class GrassTNTEntity extends Entity implements TraceableEntity {
     }
 
     protected void explode() {
-        BlockPos explosionPos = this.blockPosition();
-        int radius = 4;
-        for (int x = -radius; x <= radius; x++) {
-            for (int y = -radius; y <= radius; y++) {
-                for (int z = -radius; z <= radius; z++) {
-                    BlockPos targetPos = explosionPos.offset(x, y, z);
-                    if (this.level().getBlockState(targetPos).canBeReplaced()) {
-                        this.level().setBlock(targetPos, Blocks.GRASS_BLOCK.defaultBlockState(), 3);
-                    }
-                }
+        Explosion explosion = this.level().explode(this, Explosion.getDefaultDamageSource(this.level(), this), this.usedPortal ? USED_PORTAL_DAMAGE_CALCULATOR : null, this.getX(), this.getY(0.0625), this.getZ(), 4.0F, false, Level.ExplosionInteraction.TNT);
+        explosion.explode();
+        explosion.finalizeExplosion(true);
+        for (BlockPos blockpos : explosion.getToBlow()) {
+            BlockState blockstate = this.level().getBlockState(blockpos);
+            if (blockstate.canBeReplaced()) {
+                this.level().setBlock(blockpos, Blocks.GRASS_BLOCK.defaultBlockState(), 3);
             }
         }
     }
@@ -166,11 +162,11 @@ public class GrassTNTEntity extends Entity implements TraceableEntity {
         DATA_FUSE_ID = SynchedEntityData.defineId(GrassTNTEntity.class, EntityDataSerializers.INT);
         DATA_BLOCK_STATE_ID = SynchedEntityData.defineId(GrassTNTEntity.class, EntityDataSerializers.BLOCK_STATE);
         USED_PORTAL_DAMAGE_CALCULATOR = new ExplosionDamageCalculator() {
-            public boolean shouldBlockExplode(Explosion p_353087_, BlockGetter p_353096_, BlockPos p_353092_, BlockState p_353086_, float p_353094_) {
-                return p_353086_.is(Blocks.NETHER_PORTAL) ? false : super.shouldBlockExplode(p_353087_, p_353096_, p_353092_, p_353086_, p_353094_);
+            public boolean shouldBlockExplode(@NotNull Explosion p_353087_, @NotNull BlockGetter p_353096_, @NotNull BlockPos p_353092_, @NotNull BlockState p_353086_, float p_353094_) {
+                return !p_353086_.is(Blocks.NETHER_PORTAL) && super.shouldBlockExplode(p_353087_, p_353096_, p_353092_, p_353086_, p_353094_);
             }
 
-            public Optional<Float> getBlockExplosionResistance(Explosion p_353090_, BlockGetter p_353088_, BlockPos p_353091_, BlockState p_353093_, FluidState p_353095_) {
+            public @NotNull Optional<Float> getBlockExplosionResistance(@NotNull Explosion p_353090_, @NotNull BlockGetter p_353088_, @NotNull BlockPos p_353091_, @NotNull BlockState p_353093_, @NotNull FluidState p_353095_) {
                 return p_353093_.is(Blocks.NETHER_PORTAL) ? Optional.empty() : super.getBlockExplosionResistance(p_353090_, p_353088_, p_353091_, p_353093_, p_353095_);
             }
         };

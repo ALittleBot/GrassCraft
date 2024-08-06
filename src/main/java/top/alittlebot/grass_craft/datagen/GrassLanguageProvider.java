@@ -30,6 +30,8 @@ public class GrassLanguageProvider {
             this.add(GrassItems.VANILLA_ITEM.get(), "Vanilla");
             this.add(GrassItems.VANILLA_INGOT_ITEM.get(), "Vanilla Ingot");
 
+            this.add(GrassItems.GRASS_TNT_ITEM.get(), "Grass TNT");
+
             this.add(GrassEffects.GROW_GRASS.get(), "Grow Grass");
 
             this.add(GrassPotions.POTION_KEY + GrassPotions.GRASS_POTION_ID, "Potion of Grass");
@@ -53,6 +55,8 @@ public class GrassLanguageProvider {
             this.add(GrassItems.GRASS_BALL_ITEM.get(), "草球");
             this.add(GrassItems.VANILLA_ITEM.get(), "香草");
             this.add(GrassItems.VANILLA_INGOT_ITEM.get(), "香草锭");
+
+            this.add(GrassItems.GRASS_TNT_ITEM.get(), "香草TNT");
 
             this.add(GrassEffects.GROW_GRASS.get(), "生草");
 

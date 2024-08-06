@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.NotNull;
 import top.alittlebot.grass_craft.entity.GrassTNTEntity;
 
 import javax.annotation.Nullable;
@@ -36,16 +37,16 @@ public class GrassTNTBlock extends Block {
     }
 
     @Override
-    protected MapCodec<? extends Block> codec() {
+    protected @NotNull MapCodec<? extends Block> codec() {
         return CODEC;
     }
 
     @Override
-    public void onCaughtFire(BlockState state, Level world, BlockPos pos, @Nullable net.minecraft.core.Direction face, @Nullable LivingEntity igniter) {
+    public void onCaughtFire(@NotNull BlockState state, @NotNull Level world, @NotNull BlockPos pos, @Nullable net.minecraft.core.Direction face, @Nullable LivingEntity igniter) {
         explode(world, pos, igniter);
     }
 
-    protected void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
+    protected void onPlace(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
         if (!pOldState.is(pState.getBlock())) {
             if (pLevel.hasNeighborSignal(pPos)) {
                 onCaughtFire(pState, pLevel, pPos, null, null);
@@ -55,7 +56,7 @@ public class GrassTNTBlock extends Block {
     }
 
     @Override
-    protected void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
+    protected void neighborChanged(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
         if (pLevel.hasNeighborSignal(pPos)) {
             onCaughtFire(pState, pLevel, pPos, null, null);
             pLevel.removeBlock(pPos, false);
@@ -92,8 +93,8 @@ public class GrassTNTBlock extends Block {
     private static void explode(Level pLevel, BlockPos pPos, @Nullable LivingEntity pEntity) {
         if (!pLevel.isClientSide) {
             GrassTNTEntity grassTNTEntity = new GrassTNTEntity(pLevel, (double)pPos.getX() + 0.5, (double)pPos.getY(), (double)pPos.getZ() + 0.5, pEntity);
+            pLevel.playSound((Player)null, grassTNTEntity.getX(), grassTNTEntity.getY(), grassTNTEntity.getZ(), SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);
             pLevel.addFreshEntity(grassTNTEntity);
-            pLevel.playSound(null, grassTNTEntity.getX(), grassTNTEntity.getY(), grassTNTEntity.getZ(), SoundEvents.LODESTONE_COMPASS_LOCK, SoundSource.BLOCKS, 1.0F, 1.0F);
             pLevel.gameEvent(pEntity, GameEvent.PRIME_FUSE, pPos);
         }
     }
