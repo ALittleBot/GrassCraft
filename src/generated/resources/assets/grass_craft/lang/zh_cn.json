@@ -1,13 +1,16 @@
 {
   "block.grass_craft.grass_tnt": "香草TNT",
   "effect.grass_craft.grow_grass": "生草",
+  "entity.grass_craft.grass_tnt_entity": "点燃的香草TNT",
+  "grass_craft.tooltip.vanilla_glove": "想法来自马夫鱼33, 只能对草起作用",
   "item.grass_craft.grass_ball": "草球",
   "item.grass_craft.grass_stick": "草棍",
   "item.grass_craft.staff_of_grass": "草之杖",
   "item.grass_craft.vanilla": "香草",
+  "item.grass_craft.vanilla_glove": "香草手套",
   "item.grass_craft.vanilla_ingot": "香草锭",
   "item.minecraft.lingering_potion.effect.grass_potion": "滞留型生草药水",
   "item.minecraft.potion.effect.grass_potion": "生草药水",
   "item.minecraft.splash_potion.effect.grass_potion": "喷溅型生草药水",
-  "item_group.grass_craft.name": "草栏"
+  "item_group.grass_craft.name": "草工艺"
 }

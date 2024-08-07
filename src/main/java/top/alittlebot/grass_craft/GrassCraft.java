@@ -8,6 +8,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import org.spongepowered.asm.mixin.Mixins;
 import top.alittlebot.grass_craft.block.GrassBlocks;
 import top.alittlebot.grass_craft.datagen.GrassBlockModelProvider;
 import top.alittlebot.grass_craft.datagen.GrassItemModelProvider;

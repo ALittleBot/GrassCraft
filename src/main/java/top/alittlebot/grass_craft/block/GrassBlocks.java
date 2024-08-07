@@ -1,6 +1,7 @@
 package top.alittlebot.grass_craft.block;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import top.alittlebot.grass_craft.GrassCraft;
@@ -13,7 +14,7 @@ public class GrassBlocks {
     public static final DeferredHolder<Block, Block> GRASS_TNT_BLOCK;
 
     static {
-        GRASS_TNT_BLOCK = BLOCKS.register(GRASS_TNT_ID, () -> new GrassTNTBlock(GrassTNTBlock.Properties.of()));
+        GRASS_TNT_BLOCK = BLOCKS.register(GRASS_TNT_ID, () -> new GrassTNTBlock(GrassTNTBlock.Properties.of().sound(SoundType.GRASS)));
     }
 
 }
