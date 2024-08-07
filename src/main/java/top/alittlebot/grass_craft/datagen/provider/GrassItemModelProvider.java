@@ -1,4 +1,4 @@
-package top.alittlebot.grass_craft.datagen;
+package top.alittlebot.grass_craft.datagen.provider;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -6,20 +6,12 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import top.alittlebot.grass_craft.GrassCraft;
 import top.alittlebot.grass_craft.block.GrassBlocks;
 import top.alittlebot.grass_craft.item.GrassItems;
 
 public class GrassItemModelProvider {
-
-    public static void onGatherData(GatherDataEvent event) {
-        var gen = event.getGenerator();
-        var packOutput = gen.getPackOutput();
-        var helper = event.getExistingFileHelper();
-        gen.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, helper));
-    }
 
     public static class ModItemModelProvider extends ItemModelProvider {
         public ModItemModelProvider(PackOutput gen, ExistingFileHelper helper) {

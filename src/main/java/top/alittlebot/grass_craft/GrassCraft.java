@@ -8,12 +8,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import org.spongepowered.asm.mixin.Mixins;
 import top.alittlebot.grass_craft.block.GrassBlocks;
-import top.alittlebot.grass_craft.datagen.GrassBlockModelProvider;
-import top.alittlebot.grass_craft.datagen.GrassItemModelProvider;
-import top.alittlebot.grass_craft.datagen.GrassLanguageProvider;
-import top.alittlebot.grass_craft.datagen.GrassRecipeProvider;
+import top.alittlebot.grass_craft.datagen.GrassProvider;
 import top.alittlebot.grass_craft.effect.GrassEffects;
 import top.alittlebot.grass_craft.entity.GrassEntity;
 import top.alittlebot.grass_craft.entity.renderer.GrassTNTRenderer;
@@ -36,10 +32,7 @@ public class GrassCraft {
 
         NeoForge.EVENT_BUS.register(GrassRegisterBrewingRecipesEvent.class);
 
-        modEventBus.addListener(GrassLanguageProvider::onGatherData);
-        modEventBus.addListener(GrassBlockModelProvider::onGatherData);
-        modEventBus.addListener(GrassItemModelProvider::onGatherData);
-        modEventBus.addListener(GrassRecipeProvider::onGatherData);
+        modEventBus.addListener(GrassProvider::onGatherData);
     }
 
     @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

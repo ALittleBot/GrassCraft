@@ -1,8 +1,7 @@
-package top.alittlebot.grass_craft.datagen;
+package top.alittlebot.grass_craft.datagen.provider;
 
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import net.neoforged.neoforge.data.event.GatherDataEvent;
 import top.alittlebot.grass_craft.GrassCraft;
 import top.alittlebot.grass_craft.effect.GrassEffects;
 import top.alittlebot.grass_craft.GrassCreativeTab;
@@ -11,12 +10,6 @@ import top.alittlebot.grass_craft.item.GrassItems;
 import top.alittlebot.grass_craft.item.potion.GrassPotions;
 
 public class GrassLanguageProvider {
-    public static void onGatherData(GatherDataEvent event) {
-        var gen = event.getGenerator();
-        var packOutput = gen.getPackOutput();
-        gen.addProvider(event.includeClient(), new EnglishLanguageProvider(packOutput));
-        gen.addProvider(event.includeClient(), new ChineseLanguageProvider(packOutput));
-    }
 
     public static class EnglishLanguageProvider extends LanguageProvider {
         public EnglishLanguageProvider(PackOutput gen) {

@@ -64,15 +64,6 @@ public class GrassTNTBlock extends Block {
     }
 
     @Override
-    public BlockState playerWillDestroy(Level pLevel, BlockPos pPos, BlockState pState, Player pPlayer) {
-        if (!pLevel.isClientSide() && !pPlayer.isCreative() && pState.getValue(UNSTABLE)) {
-            onCaughtFire(pState, pLevel, pPos, null, null);
-        }
-
-        return super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
-    }
-
-    @Override
     public void wasExploded(Level pLevel, BlockPos pPos, Explosion pExplosion) {
         if (!pLevel.isClientSide) {
             GrassTNTEntity grassTNTEntity = new GrassTNTEntity(
