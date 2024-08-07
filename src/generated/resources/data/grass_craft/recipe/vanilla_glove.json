@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "grass_craft",
+  "key": {
+    "A": {
+      "item": "grass_craft:vanilla_ingot"
+    },
+    "B": {
+      "item": "minecraft:short_grass"
+    }
+  },
+  "pattern": [
+    "AA",
+    "BB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "grass_craft:vanilla_glove"
+  }
+}

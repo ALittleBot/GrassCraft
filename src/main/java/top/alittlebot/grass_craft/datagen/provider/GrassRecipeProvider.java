@@ -37,6 +37,21 @@ public class GrassRecipeProvider {
                     .pattern("B")
                     .unlockedBy(getHasName(GrassItems.VANILLA_INGOT_ITEM.get()), has(GrassItems.VANILLA_INGOT_ITEM.get()))
                     .save(recipeOutput);
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GrassItems.GRASS_BALL_ITEM.get(), 4)
+                    .group(GrassCraft.MOD_ID)
+                    .define('A', GrassItems.VANILLA_ITEM.get())
+                    .pattern("A")
+                    .unlockedBy(getHasName(GrassItems.VANILLA_ITEM.get()), has(GrassItems.VANILLA_ITEM.get()))
+                    .save(recipeOutput);
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GrassItems.VANILLA_GLOVE_ITEM.get(), 1)
+                    .group(GrassCraft.MOD_ID)
+                    .define('A', GrassItems.VANILLA_INGOT_ITEM.get())
+                    .define('B', Items.SHORT_GRASS)
+                    .pattern("AA")
+                    .pattern("BB")
+                    .unlockedBy(getHasName(GrassItems.VANILLA_INGOT_ITEM.get()), has(GrassItems.VANILLA_INGOT_ITEM.get()))
+                    .save(recipeOutput);
+
 
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GrassItems.VANILLA_INGOT_ITEM.get(), 1)
                     .group(GrassCraft.MOD_ID)
@@ -44,7 +59,6 @@ public class GrassRecipeProvider {
                     .requires(GrassItems.VANILLA_ITEM.get(), 4)
                     .unlockedBy(getHasName(GrassItems.VANILLA_ITEM.get()), has(GrassItems.VANILLA_ITEM.get()))
                     .save(recipeOutput);
-
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GrassItems.GRASS_TNT_ITEM.get(), 1)
                     .group(GrassCraft.MOD_ID)
                     .requires(Items.TNT, 1)

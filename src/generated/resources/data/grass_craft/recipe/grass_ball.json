@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "grass_craft",
+  "key": {
+    "A": {
+      "item": "grass_craft:vanilla"
+    }
+  },
+  "pattern": [
+    "A"
+  ],
+  "result": {
+    "count": 4,
+    "id": "grass_craft:grass_ball"
+  }
+}
