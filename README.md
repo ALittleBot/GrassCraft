@@ -1,25 +1,46 @@
+# 草工艺
 
-Installation information
-=======
+## 物品
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+- 草棍（原材料）
+- 香草（原材料）
+- 香草锭（原材料）
+- 草球
+- 草之杖
+- 香草手套
+- 香草TNT
+- 生草药水
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+### 草球
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+和原版雪球类似，右键即可发射。击中的实体将会有30秒的生草附魔。
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+### 草之杖
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+右键泥土或草方块时，消耗1耐久对周围的土地进行绿化。物品耐久32，暂不支持耐久和经验修补附魔。
+
+### 香草手套
+
+右键草或蕨时，可以使其被击飞。
+
+P.S. 该灵感~~和部分代码~~来自[马夫鱼33的Mod](https://modrinth.com/mod/mafish-learning)。
+
+### 香草TNT
+
+可在原版TNT的爆炸范围上生成草方块。
+
+### 生草药水
+
+可给予使用者3分钟的生草效果。
+
+## 效果
+
+### 生草
+
+可以绿化实体所站立的方块。
+
+## To Do
+
+### 变草药水
+
+可以把使用者变成草。
