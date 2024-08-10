@@ -12,8 +12,10 @@ public class GrassEffects {
     public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, GrassCraft.MOD_ID);
 
     public static final DeferredHolder<MobEffect, GrowGrassEffect> GROW_GRASS;
+    public static final DeferredHolder<MobEffect, ToGrassEffect> TO_GRASS;
 
     static {
          GROW_GRASS = EFFECTS.register(GROW_GRASS_ID, () -> new GrowGrassEffect(MobEffectCategory.BENEFICIAL, 0x98D982));
+         TO_GRASS = EFFECTS.register("to_grass", () -> new ToGrassEffect(MobEffectCategory.BENEFICIAL, 0x35502D));
     }
 }
