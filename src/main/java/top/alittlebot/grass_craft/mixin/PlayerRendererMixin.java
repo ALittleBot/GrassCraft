@@ -34,21 +34,23 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<Player, E
         参数瞎调的，只能适用于碰撞箱完整的方块
         有些bug，但勉强能用 (●'◡'●)
         */
-
         if (player.hasEffect(GrassEffects.TO_GRASS)) {
-            // 设置玩家的碰撞箱为 1x1x1 的方块大小
-            player.setBoundingBox(new AABB(player.getX(), player.getY(), player.getZ(),
-                    player.getX() + 1.0D, player.getY() + 1.0D, player.getZ() + 1.0D));
+            // 将玩家的碰撞箱设置为1x1x1方块大小并居中
+            double blockCenterX = player.getX() - 0.5;
+            double blockCenterY = player.getY();
+            double blockCenterZ = player.getZ() - 0.5;
+            player.setBoundingBox(new AABB(blockCenterX, blockCenterY, blockCenterZ,
+                    blockCenterX + 1.0D, blockCenterY + 1.0D, blockCenterZ + 1.0D));
 
-            // 创建草方块的 ItemStack
+            // 将玩家位置移动到方块的中心，以调整视角
+            player.setPosRaw(blockCenterX + 0.5, blockCenterY, blockCenterZ + 0.5);
+
+            // 在玩家位置渲染草方块
             ItemStack grassBlock = new ItemStack(Blocks.GRASS_BLOCK);
 
-            // 开始渲染
             poseStack.pushPose();
-
-            // 将草方块的中心对齐玩家的中心，并放大草方块的渲染大小
-            poseStack.translate(0.5, -0.25, 0.5); // 将草方块居中
-            poseStack.scale(4.0F, 4.0F, 4.0F);  // 将草方块的渲染缩放到1x1x1的方块大小
+            poseStack.translate(0.0, -0.25, 0.0); // 根据需要调整平移
+            poseStack.scale(4.0F, 4.0F, 4.0F);  // 缩放至覆盖整个碰撞箱
 
             // 渲染草方块
             Minecraft.getInstance().getItemRenderer().renderStatic(grassBlock, ItemDisplayContext.GROUND, i, OverlayTexture.NO_OVERLAY, poseStack, multiBufferSource, null, 0);
