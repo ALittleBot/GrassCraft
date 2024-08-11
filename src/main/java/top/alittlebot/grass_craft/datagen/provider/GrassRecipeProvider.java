@@ -65,6 +65,12 @@ public class GrassRecipeProvider {
                     .requires(GrassItems.VANILLA_ITEM.get(), 1)
                     .unlockedBy(getHasName(GrassItems.VANILLA_ITEM.get()), has(GrassItems.VANILLA_ITEM.get()))
                     .save(recipeOutput);
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GrassItems.VANILLA_PUREE_ITEM.get(), 1)
+                    .group(GrassCraft.MOD_ID)
+                    .requires(GrassItems.VANILLA_ITEM.get(), 1)
+                    .requires(Items.BOWL, 1)
+                    .unlockedBy(getHasName(GrassItems.VANILLA_ITEM.get()), has(GrassItems.VANILLA_ITEM.get()))
+                    .save(recipeOutput);
 
             SimpleCookingRecipeBuilder.smelting(
                     Ingredient.of(Items.SHORT_GRASS),

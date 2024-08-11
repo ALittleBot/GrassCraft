@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "grass_craft",
+  "ingredients": [
+    {
+      "item": "grass_craft:vanilla"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "grass_craft:vanilla_puree"
+  }
+}

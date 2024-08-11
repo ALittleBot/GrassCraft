@@ -24,6 +24,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.VANILLA_ITEM.get(), "Vanilla");
             this.add(GrassItems.VANILLA_INGOT_ITEM.get(), "Vanilla Ingot");
             this.add(GrassItems.VANILLA_GLOVE_ITEM.get(), "Vanilla Glove");
+            this.add(GrassItems.VANILLA_PUREE_ITEM.get(), "Vanilla Puree");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "Grass TNT");
 
@@ -64,6 +65,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.VANILLA_ITEM.get(), "香草");
             this.add(GrassItems.VANILLA_INGOT_ITEM.get(), "香草锭");
             this.add(GrassItems.VANILLA_GLOVE_ITEM.get(), "香草手套");
+            this.add(GrassItems.VANILLA_PUREE_ITEM.get(), "香草泥");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "香草TNT");
 

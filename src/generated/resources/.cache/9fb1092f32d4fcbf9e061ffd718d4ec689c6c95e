@@ -1,4 +1,4 @@
-// 1.21	2024-08-07T18:13:47.045839	Recipes
+// 1.21	2024-08-11T20:55:41.7168678	Recipes
 16438cc1beb28f3c6c4825e7745bf95911a118a7 data/grass_craft/advancement/recipes/misc/grass_ball.json
 45cdb1122154d574cc5c62556d1c2fe1bec5cbe9 data/grass_craft/advancement/recipes/misc/grass_stick.json
 9922f6946137a91ac0dc2d8a6814510d0841e224 data/grass_craft/advancement/recipes/misc/grass_tnt.json
@@ -6,6 +6,7 @@
 42b20f239e3fc6b2f0f6117ba2723fddf8a4e81b data/grass_craft/advancement/recipes/misc/vanilla.json
 1232f8f0317d44e06f5a6aa8f645b32357dd6338 data/grass_craft/advancement/recipes/misc/vanilla_glove.json
 537e6ce1cf90226806dfe6f0915c1330c2b18190 data/grass_craft/advancement/recipes/misc/vanilla_ingot.json
+080c5e4a4a131453cd1ce3166dd92b33c28f1bf1 data/grass_craft/advancement/recipes/misc/vanilla_puree.json
 8a89640440148064673d04fabb10909a0260c0aa data/grass_craft/recipe/grass_ball.json
 4cd2b80d25fd4a0304f1927defcc35a3ec2a3fbc data/grass_craft/recipe/grass_stick.json
 75d83d774e4b253b5156917ca8aa2bb303131f06 data/grass_craft/recipe/grass_tnt.json
@@ -13,3 +14,4 @@
 b874de9117a45d84ced30ff7ed35a65a36a60086 data/grass_craft/recipe/vanilla.json
 50793413980b4a687da7af545f737ebff499c206 data/grass_craft/recipe/vanilla_glove.json
 f80b0f3055adce01763cf355d102efac015d5f8a data/grass_craft/recipe/vanilla_ingot.json
+1d8283a36d65dde63475b9bed124cda20724dac4 data/grass_craft/recipe/vanilla_puree.json
