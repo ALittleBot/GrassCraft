@@ -40,7 +40,7 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<Player, E
             double blockCenterY = player.getY();
             double blockCenterZ = player.getZ() - 0.5;
             player.setBoundingBox(new AABB(blockCenterX, blockCenterY, blockCenterZ,
-                    blockCenterX + 1.0D, blockCenterY + 1.0D, blockCenterZ + 1.0D));
+                    blockCenterX + 0.99D, blockCenterY + 0.99D, blockCenterZ + 0.99D));  // 只能写成0.99D，不然没办法塞进一格空间里
 
             // 将玩家位置移动到方块的中心，以调整视角
             player.setPosRaw(blockCenterX + 0.5, blockCenterY, blockCenterZ + 0.5);
