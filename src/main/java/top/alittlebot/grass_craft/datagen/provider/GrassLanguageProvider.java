@@ -28,10 +28,15 @@ public class GrassLanguageProvider {
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "Grass TNT");
 
             this.add(GrassEffects.GROW_GRASS.get(), "Grow Grass");
+            this.add(GrassEffects.TO_GRASS.get(), "To Grass");
 
             this.add(GrassPotions.POTION_KEY + GrassPotions.GRASS_POTION_ID, "Potion of Grass");
             this.add(GrassPotions.SPLASH_POTION_KEY + GrassPotions.GRASS_POTION_ID, "Splash Potion of Grass");
             this.add(GrassPotions.LINGERING_POTION_KEY + GrassPotions.GRASS_POTION_ID, "Lingering Potion of Grass");
+
+            this.add(GrassPotions.POTION_KEY + GrassPotions.TO_GRASS_POTION_ID, "Potion of To Grass");
+            this.add(GrassPotions.SPLASH_POTION_KEY + GrassPotions.TO_GRASS_POTION_ID, "Splash Potion of To Grass");
+            this.add(GrassPotions.LINGERING_POTION_KEY + GrassPotions.TO_GRASS_POTION_ID, "Lingering Potion of To Grass");
 
             this.add(GrassEntity.GRASS_TNT_ENTITY.get(), "Primed Grass TNT");
 
@@ -59,10 +64,15 @@ public class GrassLanguageProvider {
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "香草TNT");
 
             this.add(GrassEffects.GROW_GRASS.get(), "生草");
+            this.add(GrassEffects.TO_GRASS.get(), "变草");
 
             this.add(GrassPotions.POTION_KEY + GrassPotions.GRASS_POTION_ID, "生草药水");
             this.add(GrassPotions.SPLASH_POTION_KEY + GrassPotions.GRASS_POTION_ID, "喷溅型生草药水");
             this.add(GrassPotions.LINGERING_POTION_KEY + GrassPotions.GRASS_POTION_ID, "滞留型生草药水");
+
+            this.add(GrassPotions.POTION_KEY + GrassPotions.TO_GRASS_POTION_ID, "变草药水");
+            this.add(GrassPotions.SPLASH_POTION_KEY + GrassPotions.TO_GRASS_POTION_ID, "喷溅型变草药水");
+            this.add(GrassPotions.LINGERING_POTION_KEY + GrassPotions.TO_GRASS_POTION_ID, "滞留型变草药水");
 
             this.add(GrassEntity.GRASS_TNT_ENTITY.get(), "点燃的香草TNT");
 

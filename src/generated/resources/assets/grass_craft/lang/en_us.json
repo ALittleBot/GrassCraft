@@ -1,6 +1,7 @@
 {
   "block.grass_craft.grass_tnt": "Grass TNT",
   "effect.grass_craft.grow_grass": "Grow Grass",
+  "effect.grass_craft.to_grass": "To Grass",
   "entity.grass_craft.grass_tnt_entity": "Primed Grass TNT",
   "grass_craft.tooltip.vanilla_glove": "Idea from Mafuyu33, only works on grass",
   "item.grass_craft.grass_ball": "Grass Ball",
@@ -10,7 +11,10 @@
   "item.grass_craft.vanilla_glove": "Vanilla Glove",
   "item.grass_craft.vanilla_ingot": "Vanilla Ingot",
   "item.minecraft.lingering_potion.effect.grass_potion": "Lingering Potion of Grass",
+  "item.minecraft.lingering_potion.effect.to_grass_potion": "Lingering Potion of To Grass",
   "item.minecraft.potion.effect.grass_potion": "Potion of Grass",
+  "item.minecraft.potion.effect.to_grass_potion": "Potion of To Grass",
   "item.minecraft.splash_potion.effect.grass_potion": "Splash Potion of Grass",
+  "item.minecraft.splash_potion.effect.to_grass_potion": "Splash Potion of To Grass",
   "item_group.grass_craft.name": "Grass Craft"
 }
