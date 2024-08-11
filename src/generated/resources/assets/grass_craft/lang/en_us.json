@@ -16,5 +16,7 @@
   "item.minecraft.potion.effect.to_grass_potion": "Potion of To Grass",
   "item.minecraft.splash_potion.effect.grass_potion": "Splash Potion of Grass",
   "item.minecraft.splash_potion.effect.to_grass_potion": "Splash Potion of To Grass",
+  "item.minecraft.tipped_arrow.effect.grass_potion": "Arrow of Grass",
+  "item.minecraft.tipped_arrow.effect.to_grass_potion": "Arrow of To Grass",
   "item_group.grass_craft.name": "Grass Craft"
 }

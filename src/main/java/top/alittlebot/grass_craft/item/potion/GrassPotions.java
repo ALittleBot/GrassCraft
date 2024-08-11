@@ -15,6 +15,8 @@ public class GrassPotions {
     public static final String SPLASH_POTION_KEY = "item.minecraft.splash_potion.effect.";
     public static final String LINGERING_POTION_KEY = "item.minecraft.lingering_potion.effect.";
 
+    public static final String TIPPED_ARROW_KEY = "item.minecraft.tipped_arrow.effect.";
+
     public static final String GRASS_POTION_ID = "grass_potion";
     public static final String TO_GRASS_POTION_ID = "to_grass_potion";
 
