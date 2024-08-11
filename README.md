@@ -1,3 +1,5 @@
+[<div align=center><img src="img/Teacon2024.png"></div>](https://link.mcmod.cn/target/teaconjiachen)
+
 # 草工艺
 
 ## 物品
@@ -10,6 +12,7 @@
 - 香草手套
 - 香草TNT
 - 生草药水
+- 变草药水
 
 ### 草球
 
@@ -41,6 +44,3 @@ P.S. 该灵感~~和部分代码~~来自[马夫鱼33的Mod](https://modrinth.com/
 
 ## To Do
 
-### 变草药水
-
-可以把使用者变成草。
