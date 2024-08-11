@@ -44,7 +44,11 @@ displayName="${mod_name}" #mandatory
 authors="${mod_authors}" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
-description='''${mod_description}'''
+description='''
+十分生草的mod
+'''
+
+logoFile = "assets/grass_craft/icon.png"
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 [[mixins]]

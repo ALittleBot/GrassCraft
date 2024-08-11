@@ -17,5 +17,10 @@ public class GrassRegisterBrewingRecipesEvent {
                 Items.SHORT_GRASS,
                 GrassPotions.GRASS_POTION
         );
+        builder.addMix(
+                Potions.INVISIBILITY,
+                Items.SHORT_GRASS,
+                GrassPotions.TO_GRASS_POTION
+        );
     }
 }
