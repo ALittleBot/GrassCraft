@@ -1,5 +1,6 @@
 {
   "block.grass_craft.grass_tnt": "香草TNT",
+  "effect.grass_craft.grass_poisoning": "草中毒",
   "effect.grass_craft.grow_grass": "生草",
   "effect.grass_craft.to_grass": "变草",
   "entity.grass_craft.grass_tnt_entity": "点燃的香草TNT",
@@ -11,12 +12,16 @@
   "item.grass_craft.vanilla_glove": "香草手套",
   "item.grass_craft.vanilla_ingot": "香草锭",
   "item.grass_craft.vanilla_puree": "香草泥",
+  "item.minecraft.lingering_potion.effect.grass_poisoning_potion": "滞留型草中毒药水",
   "item.minecraft.lingering_potion.effect.grass_potion": "滞留型生草药水",
   "item.minecraft.lingering_potion.effect.to_grass_potion": "滞留型变草药水",
+  "item.minecraft.potion.effect.grass_poisoning_potion": "草中毒药水",
   "item.minecraft.potion.effect.grass_potion": "生草药水",
   "item.minecraft.potion.effect.to_grass_potion": "变草药水",
+  "item.minecraft.splash_potion.effect.grass_poisoning_potion": "喷溅型草中毒药水",
   "item.minecraft.splash_potion.effect.grass_potion": "喷溅型生草药水",
   "item.minecraft.splash_potion.effect.to_grass_potion": "喷溅型变草药水",
+  "item.minecraft.tipped_arrow.effect.grass_poisoning_potion": "草中毒之箭",
   "item.minecraft.tipped_arrow.effect.grass_potion": "生草之箭",
   "item.minecraft.tipped_arrow.effect.to_grass_potion": "变草之箭",
   "item_group.grass_craft.name": "草工艺"
