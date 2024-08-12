@@ -8,7 +8,6 @@
     "defaultRequire": 1
   },
   "client": [
-    "LivingEntityRendererMixin",
-    "PlayerRendererMixin"
+    "LivingEntityRendererMixin"
   ]
 }
