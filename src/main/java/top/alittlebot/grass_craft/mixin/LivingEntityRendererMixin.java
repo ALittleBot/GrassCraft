@@ -16,20 +16,23 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import top.alittlebot.grass_craft.effect.GrassEffects;
 
 @Mixin(LivingEntityRenderer.class)
 public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extends EntityModel<T>> extends EntityRenderer<T> implements RenderLayerParent<T, M> {
     /*
-    * 十分的好玩，快去试试吧 \(￣︶￣*\))
+    * 十分地好玩，快去试试吧 \(￣︶￣*\))
     */
 
     protected LivingEntityRendererMixin(EntityRendererProvider.Context context) {
         super(context);
     }
 
-    @Override
-    public void render(T entity, float f, float g, PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {
+    @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At("HEAD"), cancellable = true)
+    public void render(T entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight, CallbackInfo ci) {
         if (entity.hasEffect(GrassEffects.TO_GRASS) && entity instanceof Player) {
             // 将玩家的碰撞箱设置为1x1x1方块大小并居中
             double blockCenterX = entity.getX() - 0.5;
@@ -49,17 +52,19 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
             poseStack.scale(4.0F, 4.0F, 4.0F);  // 缩放至覆盖整个碰撞箱
 
             // 渲染草方块
-            Minecraft.getInstance().getItemRenderer().renderStatic(grassBlock, ItemDisplayContext.GROUND, i, OverlayTexture.NO_OVERLAY, poseStack, multiBufferSource, null, 0);
+            Minecraft.getInstance().getItemRenderer().renderStatic(grassBlock, ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY, poseStack, buffer, null, 0);
             poseStack.popPose();
+            ci.cancel();
         } else if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(GrassEffects.GRASS_POISONING)) {
             ItemStack grassBlock = new ItemStack(Blocks.GRASS_BLOCK);
             poseStack.pushPose();
             poseStack.translate(0.0, 0.0, 0.0); // 根据需要调整平移
             poseStack.scale(4.0F, 4.0F, 4.0F);  // 缩放至覆盖整个碰撞箱
-            Minecraft.getInstance().getItemRenderer().renderStatic(grassBlock, ItemDisplayContext.GROUND, i, OverlayTexture.NO_OVERLAY, poseStack, multiBufferSource, null, 0);
+            Minecraft.getInstance().getItemRenderer().renderStatic(grassBlock, ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY, poseStack, buffer, null, 0);
             poseStack.popPose();
+            ci.cancel();
         } else {
-            super.render(entity, f, g, poseStack, multiBufferSource, i);
+            super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
         }
     }
 }
