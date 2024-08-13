@@ -51,6 +51,6 @@ public class GrassItems {
                 .build())));
 
         GRASS_TNT_ITEM = ITEMS.register(GrassBlocks.GRASS_TNT_ID, () -> new BlockItem(GrassBlocks.GRASS_TNT_BLOCK.get(), new Item.Properties()));
-        GRASS_MOB_SPAWN_EGG_ITEM = ITEMS.register(GRASS_MOB_SPAWN_EGG_ID, () -> new SpawnEggItem(GrassEntity.GRASS_MOB_ENTITY.get(), 0x00ff00, 0x00ff00, new Item.Properties()));
+        GRASS_MOB_SPAWN_EGG_ITEM = ITEMS.register(GRASS_MOB_SPAWN_EGG_ID, () -> new SpawnEggItem(GrassEntity.GRASS_MOB_ENTITY.get(), 0x395832, 0x98D982, new Item.Properties()));
     }
 }

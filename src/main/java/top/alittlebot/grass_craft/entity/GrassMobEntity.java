@@ -32,13 +32,13 @@ import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable {
     /*
-    * 抄猪的代码 （￣︶￣）↗　
+    * 抄猪的代码 （￣︶￣）↗
+    * 注意音量
     */
     private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(GrassMobEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> DATA_SADDLE_ID = SynchedEntityData.defineId(GrassMobEntity.class, EntityDataSerializers.BOOLEAN);
@@ -96,23 +96,25 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.PIG_AMBIENT;
+        return SoundEvents.ANVIL_PLACE;
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return SoundEvents.PIG_HURT;
+        return SoundEvents.ANVIL_PLACE;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.PIG_DEATH;
+        return SoundEvents.DRIPSTONE_BLOCK_BREAK;
     }
 
+    /*
     @Override
     protected void playStepSound(BlockPos pos, BlockState block) {
         this.playSound(SoundEvents.PIG_STEP, 0.15F, 1.0F);
     }
+     */
 
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
