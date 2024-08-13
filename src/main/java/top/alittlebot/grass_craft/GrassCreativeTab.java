@@ -27,6 +27,7 @@ public class GrassCreativeTab {
                     output.accept(GrassItems.GRASS_TNT_ITEM.get());
                     output.accept(GrassItems.VANILLA_GLOVE_ITEM.get());
                     output.accept(GrassItems.VANILLA_PUREE_ITEM.get());
+                    output.accept(GrassItems.GRASS_MOB_SPAWN_EGG_ITEM.get());
                 }).build());
     }
 }

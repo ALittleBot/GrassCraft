@@ -12,8 +12,10 @@ public class GrassEntity {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(Registries.ENTITY_TYPE, GrassCraft.MOD_ID);
 
     public static final String GRASS_TNT_ENTITY_ID = "grass_tnt_entity";
+    public static final String GRASS_MOB_ENTITY_ID = "grass_mob";
 
     public static final Supplier<EntityType<GrassTNTEntity>> GRASS_TNT_ENTITY;
+    public static final Supplier<EntityType<GrassMobEntity>> GRASS_MOB_ENTITY;
 
     static {
         GRASS_TNT_ENTITY = ENTITIES.register(GRASS_TNT_ENTITY_ID, () -> EntityType.Builder.<GrassTNTEntity>of(GrassTNTEntity::new, MobCategory.MISC)
@@ -22,6 +24,11 @@ public class GrassEntity {
                         .eyeHeight(0.15F)
                         .clientTrackingRange(10)
                         .build(GRASS_TNT_ENTITY_ID));
+
+        GRASS_MOB_ENTITY = ENTITIES.register(GRASS_MOB_ENTITY_ID, () -> EntityType.Builder.of(GrassMobEntity::new, MobCategory.MISC)
+                .fireImmune()
+                .sized(1.0F, 1.0F)
+                .build(GRASS_TNT_ENTITY_ID));
     }
 
 }

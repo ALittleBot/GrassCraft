@@ -8,10 +8,13 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import top.alittlebot.grass_craft.block.GrassBlocks;
 import top.alittlebot.grass_craft.datagen.GrassProvider;
 import top.alittlebot.grass_craft.effect.GrassEffects;
 import top.alittlebot.grass_craft.entity.GrassEntity;
+import top.alittlebot.grass_craft.entity.GrassMobEntity;
+import top.alittlebot.grass_craft.entity.renderer.GrassMobRenderer;
 import top.alittlebot.grass_craft.entity.renderer.GrassTNTRenderer;
 import top.alittlebot.grass_craft.event.GrassRegisterBrewingRecipesEvent;
 import top.alittlebot.grass_craft.item.GrassItems;
@@ -40,6 +43,12 @@ public class GrassCraft {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(GrassEntity.GRASS_TNT_ENTITY.get(), GrassTNTRenderer::new);
+            EntityRenderers.register(GrassEntity.GRASS_MOB_ENTITY.get(), GrassMobRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
+            event.put(GrassEntity.GRASS_MOB_ENTITY.get(), GrassMobEntity.createAttributes().build());
         }
     }
 }

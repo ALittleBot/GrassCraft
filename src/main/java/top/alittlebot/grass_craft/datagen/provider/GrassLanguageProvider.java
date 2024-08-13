@@ -48,6 +48,7 @@ public class GrassLanguageProvider {
             this.add(GrassPotions.TIPPED_ARROW_KEY + GrassPotions.GRASS_POISONING_POTION_ID, "Arrow of Grass Poisoning");
 
             this.add(GrassEntity.GRASS_TNT_ENTITY.get(), "Primed Grass TNT");
+            this.add(GrassEntity.GRASS_MOB_ENTITY.get(), "Grass Mob");
 
             this.add("grass_craft.tooltip.vanilla_glove", "Idea from Mafuyu33, only works on grass");
 
@@ -93,6 +94,7 @@ public class GrassLanguageProvider {
             this.add(GrassPotions.TIPPED_ARROW_KEY + GrassPotions.GRASS_POISONING_POTION_ID, "草中毒之箭");
 
             this.add(GrassEntity.GRASS_TNT_ENTITY.get(), "点燃的香草TNT");
+            this.add(GrassEntity.GRASS_MOB_ENTITY.get(), "草草草");
 
             this.add("grass_craft.tooltip.vanilla_glove", "想法来自马夫鱼33, 只能对草起作用");
 

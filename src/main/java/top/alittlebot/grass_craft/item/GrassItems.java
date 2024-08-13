@@ -5,11 +5,13 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import top.alittlebot.grass_craft.GrassCraft;
 import top.alittlebot.grass_craft.block.GrassBlocks;
 import top.alittlebot.grass_craft.effect.GrassEffects;
+import top.alittlebot.grass_craft.entity.GrassEntity;
 
 public class GrassItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(GrassCraft.MOD_ID);
@@ -21,6 +23,7 @@ public class GrassItems {
     public static final String VANILLA_INGOT_ID = "vanilla_ingot";
     public static final String VANILLA_GLOVE_ID = "vanilla_glove";
     public static final String VANILLA_PUREE_ID = "vanilla_puree";
+    public static final String GRASS_MOB_SPAWN_EGG_ID = "grass_mob_spawn_egg";
 
     public static final DeferredHolder<Item, Item> GRASS_STICK_ITEM;
     public static final DeferredHolder<Item, Item> STAFF_OF_GRASS_ITEM;
@@ -30,6 +33,7 @@ public class GrassItems {
     public static final DeferredHolder<Item, Item> GRASS_TNT_ITEM;
     public static final DeferredHolder<Item, Item> VANILLA_GLOVE_ITEM;
     public static final DeferredHolder<Item, Item> VANILLA_PUREE_ITEM;
+    public static final DeferredHolder<Item, Item> GRASS_MOB_SPAWN_EGG_ITEM;
 
     static {
         GRASS_STICK_ITEM = ITEMS.register(GRASS_STICK_ID, () -> new Item(new Item.Properties()));
@@ -47,5 +51,6 @@ public class GrassItems {
                 .build())));
 
         GRASS_TNT_ITEM = ITEMS.register(GrassBlocks.GRASS_TNT_ID, () -> new BlockItem(GrassBlocks.GRASS_TNT_BLOCK.get(), new Item.Properties()));
+        GRASS_MOB_SPAWN_EGG_ITEM = ITEMS.register(GRASS_MOB_SPAWN_EGG_ID, () -> new SpawnEggItem(GrassEntity.GRASS_MOB_ENTITY.get(), 0x00ff00, 0x00ff00, new Item.Properties()));
     }
 }
