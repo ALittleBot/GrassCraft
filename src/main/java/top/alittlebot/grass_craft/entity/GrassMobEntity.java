@@ -96,25 +96,18 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.ANVIL_PLACE;
+        return SoundEvents.GRASS_STEP;
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return SoundEvents.ANVIL_PLACE;
+        return SoundEvents.GRASS_HIT;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.DRIPSTONE_BLOCK_BREAK;
+        return SoundEvents.GRASS_BREAK;
     }
-
-    /*
-    @Override
-    protected void playStepSound(BlockPos pos, BlockState block) {
-        this.playSound(SoundEvents.PIG_STEP, 0.15F, 1.0F);
-    }
-     */
 
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
