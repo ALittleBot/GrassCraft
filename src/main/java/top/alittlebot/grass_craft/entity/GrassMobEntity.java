@@ -34,6 +34,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import top.alittlebot.grass_craft.item.GrassItems;
 
 public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable {
     /*
@@ -68,7 +69,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.25));
         this.goalSelector.addGoal(3, new BreedGoal(this, 1.0));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, stack -> stack.is(Items.CARROT_ON_A_STICK), false));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, stack -> stack.is(GrassItems.GRASS_ON_A_STICK_ITEM), false));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, stack -> stack.is(ItemTags.PIG_FOOD), false));
         this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0));
@@ -87,7 +88,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     public LivingEntity getControllingPassenger() {
         if (this.isSaddled()) {
             Entity passenger = this.getFirstPassenger();
-            if (passenger instanceof Player player && player.isHolding(Items.CARROT_ON_A_STICK)) {
+            if (passenger instanceof Player player && player.isHolding(GrassItems.GRASS_ON_A_STICK_ITEM.get())) {
                 return player;
             }
         }
@@ -135,7 +136,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
 
     @Override
     public boolean isSaddled() {
-        return this.entityData.get(SADDLED);
+        return true;
     }
 
     @Override
