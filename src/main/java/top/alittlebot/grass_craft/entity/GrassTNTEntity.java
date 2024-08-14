@@ -120,7 +120,7 @@ public class GrassTNTEntity extends Entity implements TraceableEntity {
         return this.owner;
     }
 
-    public void restoreFrom(Entity entity) {
+    public void restoreFrom(@NotNull Entity entity) {
         super.restoreFrom(entity);
         if (entity instanceof GrassTNTEntity grassTNT) {
             this.owner = grassTNT.getOwner();
@@ -133,7 +133,7 @@ public class GrassTNTEntity extends Entity implements TraceableEntity {
     }
 
     public int getFuse() {
-        return (Integer)this.entityData.get(DATA_FUSE_ID);
+        return this.entityData.get(DATA_FUSE_ID);
     }
 
     public void setBlockState(BlockState blockState) {
@@ -141,15 +141,11 @@ public class GrassTNTEntity extends Entity implements TraceableEntity {
     }
 
     public BlockState getBlockState() {
-        return (BlockState)this.entityData.get(DATA_BLOCK_STATE_ID);
-    }
-
-    private void setUsedPortal(boolean usedPortal) {
-        this.usedPortal = usedPortal;
+        return this.entityData.get(DATA_BLOCK_STATE_ID);
     }
 
     @Nullable
-    public Entity changeDimension(DimensionTransition transition) {
+    public Entity changeDimension(@NotNull DimensionTransition transition) {
         Entity entity = super.changeDimension(transition);
         if (entity instanceof GrassTNTEntity) {
             this.usedPortal = true;
