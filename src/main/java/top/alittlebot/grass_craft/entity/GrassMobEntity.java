@@ -39,10 +39,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     * 抄猪的代码 （￣︶￣）↗
     * 很好玩
     */
-    private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(GrassMobEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> DATA_SADDLE_ID = SynchedEntityData.defineId(GrassMobEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> DATA_BOOST_TIME = SynchedEntityData.defineId(GrassMobEntity.class, EntityDataSerializers.INT);
-    private final ItemBasedSteering steering = new ItemBasedSteering(this.entityData, DATA_BOOST_TIME, DATA_SADDLE_ID);
 
     public GrassMobEntity(EntityType<? extends GrassMobEntity> entityType, Level level) {
         super(entityType, level);
@@ -57,8 +54,6 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
-        builder.define(SADDLED, false);
-        builder.define(DATA_SADDLE_ID, false);
         builder.define(DATA_BOOST_TIME, 0);
     }
 
@@ -82,11 +77,9 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     @Nullable
     @Override
     public LivingEntity getControllingPassenger() {
-        if (this.isSaddled()) {
-            Entity passenger = this.getFirstPassenger();
-            if (passenger instanceof Player player && player.isHolding(GrassItems.GRASS_ON_A_STICK_ITEM.get())) {
-                return player;
-            }
+        Entity passenger = this.getFirstPassenger();
+        if (passenger instanceof Player player && player.isHolding(GrassItems.GRASS_ON_A_STICK_ITEM.get())) {
+            return player;
         }
         return super.getControllingPassenger();
     }
@@ -137,21 +130,11 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     }
 
     @Override
-    public void equipSaddle(ItemStack itemStack, @Nullable SoundSource soundSource) {
-        this.entityData.set(SADDLED, true);
-    }
+    public void equipSaddle(ItemStack itemStack, @org.jetbrains.annotations.Nullable SoundSource soundSource) {}
 
     @Override
     public boolean isSaddled() {
         return true;
-    }
-
-    @Override
-    protected void dropEquipment() {
-        super.dropEquipment();
-        if (this.isSaddled()) {
-            this.spawnAtLocation(Items.SADDLE);
-        }
     }
 
     @Override
@@ -206,11 +189,10 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
         super.tickRidden(player, travelVector);
         this.setRot(player.getYRot(), player.getXRot() * 0.5F);
         this.yRotO = this.yBodyRot = this.yHeadRot = this.getYRot();
-        this.steering.tickBoost();
     }
 
     @Override
     protected float getRiddenSpeed(Player player) {
-        return (float)(this.getAttributeValue(Attributes.MOVEMENT_SPEED) * 0.225 * (double)this.steering.boostFactor());
+        return (float)(this.getAttributeValue(Attributes.MOVEMENT_SPEED) * 0.25);
     }
 }
