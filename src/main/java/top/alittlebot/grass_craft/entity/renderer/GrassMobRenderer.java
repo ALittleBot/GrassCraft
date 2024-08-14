@@ -5,8 +5,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
@@ -27,7 +29,8 @@ public class GrassMobRenderer extends EntityRenderer<GrassMobEntity> {
         poseStack.pushPose();
         poseStack.translate(0.0, -0.25, 0.0);
         poseStack.scale(4.0F, 4.0F, 4.0F);
-        Minecraft.getInstance().getItemRenderer().renderStatic(grassBlock, ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY, poseStack, bufferSource, null, 0);
+        int overlayCoords = LivingEntityRenderer.getOverlayCoords(entity, 0.0F);
+        Minecraft.getInstance().getItemRenderer().renderStatic(grassBlock, ItemDisplayContext.GROUND, packedLight, overlayCoords, poseStack, bufferSource, null, 0);
         poseStack.popPose();
     }
 
