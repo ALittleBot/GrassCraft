@@ -49,6 +49,11 @@ public class GrassLanguageProvider {
             this.add(GrassPotions.LINGERING_POTION_KEY + GrassPotions.GRASS_POISONING_POTION_ID, "Lingering Potion of Grass Poisoning");
             this.add(GrassPotions.TIPPED_ARROW_KEY + GrassPotions.GRASS_POISONING_POTION_ID, "Arrow of Grass Poisoning");
 
+            this.add(GrassPotions.POTION_KEY + GrassPotions.STRONG_GRASS_POISONING_POTION_ID, "Potion of Grass Poisoning");
+            this.add(GrassPotions.SPLASH_POTION_KEY + GrassPotions.STRONG_GRASS_POISONING_POTION_ID, "Splash Potion of Grass Poisoning");
+            this.add(GrassPotions.LINGERING_POTION_KEY + GrassPotions.STRONG_GRASS_POISONING_POTION_ID, "Lingering Potion of Grass Poisoning");
+            this.add(GrassPotions.TIPPED_ARROW_KEY + GrassPotions.STRONG_GRASS_POISONING_POTION_ID, "Arrow of Grass Poisoning");
+
             this.add(GrassEntity.GRASS_TNT_ENTITY.get(), "Primed Grass TNT");
             this.add(GrassEntity.GRASS_MOB_ENTITY.get(), "Grass Mob");
 
@@ -96,6 +101,11 @@ public class GrassLanguageProvider {
             this.add(GrassPotions.SPLASH_POTION_KEY + GrassPotions.GRASS_POISONING_POTION_ID, "喷溅型草中毒药水");
             this.add(GrassPotions.LINGERING_POTION_KEY + GrassPotions.GRASS_POISONING_POTION_ID, "滞留型草中毒药水");
             this.add(GrassPotions.TIPPED_ARROW_KEY + GrassPotions.GRASS_POISONING_POTION_ID, "草中毒之箭");
+
+            this.add(GrassPotions.POTION_KEY + GrassPotions.STRONG_GRASS_POISONING_POTION_ID, "草中毒药水");
+            this.add(GrassPotions.SPLASH_POTION_KEY + GrassPotions.STRONG_GRASS_POISONING_POTION_ID, "喷溅型草中毒药水");
+            this.add(GrassPotions.LINGERING_POTION_KEY + GrassPotions.STRONG_GRASS_POISONING_POTION_ID, "滞留型草中毒药水");
+            this.add(GrassPotions.TIPPED_ARROW_KEY + GrassPotions.STRONG_GRASS_POISONING_POTION_ID, "草中毒之箭");
 
             this.add(GrassEntity.GRASS_TNT_ENTITY.get(), "点燃的香草TNT");
             this.add(GrassEntity.GRASS_MOB_ENTITY.get(), "草草草");
