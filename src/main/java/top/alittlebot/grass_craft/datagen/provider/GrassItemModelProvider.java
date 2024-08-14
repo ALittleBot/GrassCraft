@@ -27,6 +27,7 @@ public class GrassItemModelProvider {
             this.singleTexture(GrassItems.VANILLA_INGOT_ID, ResourceLocation.withDefaultNamespace("item/generated"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.VANILLA_INGOT_ID));
             this.singleTexture(GrassItems.VANILLA_GLOVE_ID, ResourceLocation.withDefaultNamespace("item/handheld"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.VANILLA_GLOVE_ID));
             this.singleTexture(GrassItems.VANILLA_PUREE_ID, ResourceLocation.withDefaultNamespace("item/generated"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.VANILLA_PUREE_ID));
+            this.singleTexture(GrassItems.GRASS_ON_A_STICK_ID, ResourceLocation.withDefaultNamespace("item/handheld_rod"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.GRASS_ON_A_STICK_ID));
             this.withExistingParent(GrassItems.GRASS_MOB_SPAWN_EGG_ID, this.mcLoc("item/template_spawn_egg"));
             genBlockItemModel(GrassBlocks.GRASS_TNT_BLOCK);
         }

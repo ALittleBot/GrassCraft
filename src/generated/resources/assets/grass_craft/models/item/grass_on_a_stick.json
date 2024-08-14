@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "grass_craft:item/grass_on_a_stick"
+  }
+}
