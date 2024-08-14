@@ -18,9 +18,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.BreedGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.FollowParentGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -39,7 +37,7 @@ import top.alittlebot.grass_craft.item.GrassItems;
 public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable {
     /*
     * 抄猪的代码 （￣︶￣）↗
-    * 注意音量
+    * 很好玩
     */
     private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(GrassMobEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> DATA_SADDLE_ID = SynchedEntityData.defineId(GrassMobEntity.class, EntityDataSerializers.BOOLEAN);
@@ -67,14 +65,12 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new PanicGoal(this, 1.25));
-        this.goalSelector.addGoal(3, new BreedGoal(this, 1.0));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, stack -> stack.is(GrassItems.GRASS_ON_A_STICK_ITEM), false));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, stack -> stack.is(ItemTags.PIG_FOOD), false));
-        this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1));
-        this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0));
-        this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 1.0));
+        this.goalSelector.addGoal(2, new TemptGoal(this, 1.2, stack -> stack.is(GrassItems.GRASS_ON_A_STICK_ITEM), false));
+        this.goalSelector.addGoal(2, new TemptGoal(this, 1.2, stack -> stack.is(Items.SHORT_GRASS), false));
+        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0));
+        this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -113,16 +109,27 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
-        if (itemStack.is(Items.SADDLE)) {
-            return itemStack.interactLivingEntity(player, this, hand);
-        } else if (this.isSaddleable() && !this.isVehicle() && !player.isSecondaryUseActive()) {
+        if (itemStack.is(Items.SHORT_GRASS)) {
+            float f = this.getHealth();
+            this.heal(10.0F);
+            if (this.getHealth() == f) {
+                return InteractionResult.PASS;
+            } else {
+                float f1 = 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F;
+                this.playSound(SoundEvents.GRASS_PLACE, 1.0F, f1);
+                itemStack.consume(1, player);
+                return InteractionResult.sidedSuccess(this.level().isClientSide);
+            }
+        }
+        if (this.isSaddleable() && !this.isVehicle() && !player.isSecondaryUseActive()) {
             if (!this.level().isClientSide) {
                 player.startRiding(this);
             }
             return InteractionResult.sidedSuccess(this.level().isClientSide);
         }
-        return super.mobInteract(player, hand);
+        return InteractionResult.PASS;
     }
+
 
     @Override
     public boolean isSaddleable() {
