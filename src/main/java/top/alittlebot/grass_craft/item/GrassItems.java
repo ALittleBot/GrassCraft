@@ -1,7 +1,6 @@
 package top.alittlebot.grass_craft.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -10,7 +9,6 @@ import top.alittlebot.grass_craft.GrassCraft;
 import top.alittlebot.grass_craft.block.GrassBlocks;
 import top.alittlebot.grass_craft.effect.GrassEffects;
 import top.alittlebot.grass_craft.entity.GrassEntity;
-import top.alittlebot.grass_craft.entity.GrassMobEntity;
 
 public class GrassItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(GrassCraft.MOD_ID);
