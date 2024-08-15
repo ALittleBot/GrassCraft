@@ -33,6 +33,7 @@ public class GrassItems {
     public static final DeferredHolder<Item, Item> VANILLA_PUREE_ITEM;
     public static final DeferredHolder<Item, Item> GRASS_MOB_SPAWN_EGG_ITEM;
     public static final DeferredHolder<Item, Item> GRASS_ON_A_STICK_ITEM;
+    public static final DeferredHolder<Item, Item> WEEDS_ITEM;
 
     static {
         GRASS_STICK_ITEM = ITEMS.register(GRASS_STICK_ID, () -> new Item(new Item.Properties()));
@@ -46,11 +47,12 @@ public class GrassItems {
                 .nutrition(6)
                 .saturationModifier(7.2F)
                 .alwaysEdible()
-                .effect(() -> new MobEffectInstance(GrassEffects.GROW_GRASS, 20 * 30, 0), 1.0F)
+                .effect(() -> new MobEffectInstance(GrassEffects.GRASS_POISONING, 20 * 30, 1), 1.0F)
                 .build())));
 
         GRASS_TNT_ITEM = ITEMS.register(GrassBlocks.GRASS_TNT_ID, () -> new BlockItem(GrassBlocks.GRASS_TNT_BLOCK.get(), new Item.Properties()));
         GRASS_MOB_SPAWN_EGG_ITEM = ITEMS.register(GRASS_MOB_SPAWN_EGG_ID, () -> new SpawnEggItem(GrassEntity.GRASS_MOB_ENTITY.get(), 0x395832, 0x98D982, new Item.Properties()));
         GRASS_ON_A_STICK_ITEM = ITEMS.register(GRASS_ON_A_STICK_ID, () -> new FoodOnAStickItem<>((new Item.Properties()).durability(25), GrassEntity.GRASS_MOB_ENTITY.get(), 7));
+        WEEDS_ITEM = ITEMS.register(GrassBlocks.WEEDS_ID, () -> new BlockItem(GrassBlocks.WEEDS_BLOCK.get(), new Item.Properties()));
     }
 }
