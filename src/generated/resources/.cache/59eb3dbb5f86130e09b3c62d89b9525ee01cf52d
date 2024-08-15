@@ -1,2 +1,3 @@
-// 1.21	2024-08-07T16:23:41.7464441	Loot Tables
+// 1.21	2024-08-15T22:39:21.4900316	Loot Tables
 c78e157f57d5fc0c96f8666da4dc6db65221fd7b data/grass_craft/loot_table/blocks/grass_tnt.json
+29177509e9c50015fbda0e11bfa31a2f90af9bb4 data/grass_craft/loot_table/blocks/weeds.json

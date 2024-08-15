@@ -1,4 +1,4 @@
-// 1.21	2024-08-14T10:21:09.5637981	Item Models: grass_craft
+// 1.21	2024-08-15T22:39:21.4910353	Item Models: grass_craft
 d1a7072e7991bc88ba2fbd3f8a4d10cb5fac2ac9 assets/grass_craft/models/item/grass_ball.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/grass_craft/models/item/grass_mob_spawn_egg.json
 ae7f6cf34c8b689e1a0c72e65ce9a01ee71ac551 assets/grass_craft/models/item/grass_on_a_stick.json
@@ -9,3 +9,4 @@ ae7f6cf34c8b689e1a0c72e65ce9a01ee71ac551 assets/grass_craft/models/item/grass_on
 61eba915a5f6abe58498a98244e87712cdfc47b5 assets/grass_craft/models/item/vanilla_glove.json
 bbcfbd5b5b0c401ca49fbdcfd46209e20b81ba4e assets/grass_craft/models/item/vanilla_ingot.json
 e0e142b8625c0bd8413d6da1f77d1c78800c3ff3 assets/grass_craft/models/item/vanilla_puree.json
+5586e5d00abc915676ff594b3cec8294ae4c8751 assets/grass_craft/models/item/weeds.json

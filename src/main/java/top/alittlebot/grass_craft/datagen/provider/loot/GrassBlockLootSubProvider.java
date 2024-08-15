@@ -17,6 +17,7 @@ public class GrassBlockLootSubProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(GrassBlocks.GRASS_TNT_BLOCK.get());
+        dropSelf(GrassBlocks.WEEDS_BLOCK.get());
     }
 
     @Override

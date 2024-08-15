@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "grass_craft:block/weeds_stage0"
+    },
+    "age=1": {
+      "model": "grass_craft:block/weeds_stage0"
+    },
+    "age=2": {
+      "model": "grass_craft:block/weeds_stage1"
+    },
+    "age=3": {
+      "model": "grass_craft:block/weeds_stage1"
+    },
+    "age=4": {
+      "model": "grass_craft:block/weeds_stage2"
+    },
+    "age=5": {
+      "model": "grass_craft:block/weeds_stage2"
+    },
+    "age=6": {
+      "model": "grass_craft:block/weeds_stage2"
+    },
+    "age=7": {
+      "model": "grass_craft:block/weeds_stage3"
+    }
+  }
+}
