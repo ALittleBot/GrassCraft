@@ -27,6 +27,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 import top.alittlebot.grass_craft.item.GrassItems;
 
 public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable {
@@ -42,12 +43,12 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
 
     @org.jetbrains.annotations.Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
+    public AgeableMob getBreedOffspring(@NotNull ServerLevel serverLevel, @NotNull AgeableMob ageableMob) {
         return GrassEntity.GRASS_MOB_ENTITY.get().create(serverLevel);
     }
 
     @Override
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+    protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder) {
         super.defineSynchedData(builder);
         builder.define(DATA_BOOST_TIME, 0);
     }
@@ -86,7 +87,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     }
 
     @Override
-    protected SoundEvent getHurtSound(DamageSource damageSource) {
+    protected SoundEvent getHurtSound(@NotNull DamageSource damageSource) {
         return SoundEvents.GRASS_HIT;
     }
 
@@ -102,7 +103,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
 
 
     @Override
-    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+    public @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
         super.mobInteract(player, hand);
         ItemStack itemStack = player.getItemInHand(hand);
         if (itemStack.is(Items.SHORT_GRASS)) {
@@ -117,7 +118,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
                 return InteractionResult.sidedSuccess(this.level().isClientSide);
             }
         }
-        if (this.isSaddleable() && !this.isVehicle() && !player.isSecondaryUseActive()) {
+        if (this.isSaddleable() && !this.isVehicle() && !player.isSecondaryUseActive() && !this.isInLove()) {
             if (!this.level().isClientSide) {
                 player.startRiding(this);
             }
@@ -133,7 +134,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     }
 
     @Override
-    public void equipSaddle(ItemStack itemStack, @org.jetbrains.annotations.Nullable SoundSource soundSource) {}
+    public void equipSaddle(@NotNull ItemStack itemStack, @org.jetbrains.annotations.Nullable SoundSource soundSource) {}
 
     @Override
     public boolean isSaddled() {
@@ -141,11 +142,9 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     }
 
     @Override
-    public Vec3 getDismountLocationForPassenger(LivingEntity livingEntity) {
+    public @NotNull Vec3 getDismountLocationForPassenger(@NotNull LivingEntity livingEntity) {
         Direction direction = this.getMotionDirection();
-        if (direction.getAxis() == Axis.Y) {
-            return super.getDismountLocationForPassenger(livingEntity);
-        } else {
+        if (direction.getAxis() != Axis.Y) {
             int[][] offsets = DismountHelper.offsetsForDirection(direction);
             BlockPos blockPos = this.blockPosition();
             BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos();
@@ -163,17 +162,17 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
                     }
                 }
             }
-            return super.getDismountLocationForPassenger(livingEntity);
         }
+        return super.getDismountLocationForPassenger(livingEntity);
     }
 
     @Override
-    protected Vec3 getRiddenInput(Player player, Vec3 travelVector) {
+    protected @NotNull Vec3 getRiddenInput(@NotNull Player player, @NotNull Vec3 travelVector) {
         return new Vec3(0.0, 0.0, 1.0);
     }
 
     @Override
-    public Vec3 getLeashOffset() {
+    public @NotNull Vec3 getLeashOffset() {
         return new Vec3(0.0, 0.6 * this.getEyeHeight(), this.getBbWidth() * 0.4);
     }
 
@@ -183,14 +182,31 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
     }
 
     @Override
-    protected void tickRidden(Player player, Vec3 travelVector) {
+    protected void tickRidden(@NotNull Player player, @NotNull Vec3 travelVector) {
         super.tickRidden(player, travelVector);
         this.setRot(player.getYRot(), player.getXRot() * 0.5F);
         this.yRotO = this.yBodyRot = this.yHeadRot = this.getYRot();
     }
 
     @Override
-    protected float getRiddenSpeed(Player player) {
+    protected float getRiddenSpeed(@NotNull Player player) {
         return (float) (this.getAttributeValue(Attributes.MOVEMENT_SPEED) * 0.25);
     }
+
+    /*
+    @Override
+    public void tick() {
+        super.tick();
+        if (this.isInLove()) {
+            List<Player> nearbyPlayers = this.level().getEntitiesOfClass(Player.class,
+                    new AABB(this.blockPosition()).inflate(15.0));
+            for (Player ignored : nearbyPlayers) {
+                double d0 = this.random.nextGaussian() * 0.02;
+                double d1 = this.random.nextGaussian() * 0.02;
+                double d2 = this.random.nextGaussian() * 0.02;
+                this.level().addParticle(ParticleTypes.HEART, this.getRandomX(1.0), this.getRandomY() + 0.5, this.getRandomZ(1.0), d0, d1, d2);
+            }
+        }
+    }
+     */
 }
