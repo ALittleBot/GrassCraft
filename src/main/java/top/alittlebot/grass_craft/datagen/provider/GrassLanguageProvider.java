@@ -27,6 +27,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.VANILLA_PUREE_ITEM.get(), "Vanilla Puree");
             this.add(GrassItems.GRASS_MOB_SPAWN_EGG_ITEM.get(), "Grass Mob Spawn Egg");
             this.add(GrassItems.GRASS_ON_A_STICK_ITEM.get(), "Grass on a Stick");
+            this.add(GrassItems.WEEDS_ITEM.get(), "Weeds");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "Grass TNT");
 
@@ -80,6 +81,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.VANILLA_PUREE_ITEM.get(), "香草泥");
             this.add(GrassItems.GRASS_MOB_SPAWN_EGG_ITEM.get(), "草草草刷怪蛋");
             this.add(GrassItems.GRASS_ON_A_STICK_ITEM.get(), "草钓竿");
+            this.add(GrassItems.WEEDS_ITEM.get(), "杂草");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "香草TNT");
 

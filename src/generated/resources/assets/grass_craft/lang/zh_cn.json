@@ -1,5 +1,6 @@
 {
   "block.grass_craft.grass_tnt": "香草TNT",
+  "block.grass_craft.weeds": "杂草",
   "effect.grass_craft.grass_poisoning": "草中毒",
   "effect.grass_craft.grow_grass": "生草",
   "effect.grass_craft.to_grass": "变草",
