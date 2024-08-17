@@ -32,7 +32,7 @@ import top.alittlebot.grass_craft.item.GrassItems;
 
 public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable {
     /*
-     * 抄猪的代码 （￣︶￣）↗
+     * 借鉴的猪的代码 （￣︶￣）↗
      * 很好玩
      */
     private static final EntityDataAccessor<Integer> DATA_BOOST_TIME = SynchedEntityData.defineId(GrassMobEntity.class, EntityDataSerializers.INT);
@@ -98,7 +98,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return stack.is(GrassItems.WEEDS_ITEM.get());
+        return stack.is(GrassItems.VANILLA_PUREE_ITEM.get());
     }
 
 
