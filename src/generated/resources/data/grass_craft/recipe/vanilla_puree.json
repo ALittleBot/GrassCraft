@@ -4,7 +4,7 @@
   "group": "grass_craft",
   "ingredients": [
     {
-      "item": "grass_craft:vanilla"
+      "item": "grass_craft:weeds"
     },
     {
       "item": "minecraft:bowl"
