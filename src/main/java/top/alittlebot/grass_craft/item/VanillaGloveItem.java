@@ -13,6 +13,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
 import java.util.List;
@@ -23,17 +24,17 @@ public class VanillaGloveItem extends Item {
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext context) {
+    public @NotNull InteractionResult useOn(UseOnContext context) {
         BlockState blockState = context.getLevel().getBlockState(context.getClickedPos());
         if (blockState == Blocks.SHORT_GRASS.defaultBlockState() || blockState == Blocks.TALL_GRASS.defaultBlockState() || blockState == Blocks.FERN.defaultBlockState() || blockState == Blocks.LARGE_FERN.defaultBlockState()) {
-            generateFallingBlock(context.getClickedPos(), blockState, context.getLevel(), 5, context.getPlayer());
+            generateFallingBlock(context.getClickedPos(), blockState, context.getLevel(), 1, context.getPlayer());
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
         tooltipComponents.add(Component.translatable("grass_craft.tooltip.vanilla_glove"));
     }
 
@@ -71,7 +72,7 @@ public class VanillaGloveItem extends Item {
             constructor.setAccessible(true);
             return constructor.newInstance(level, x, y, z, state);
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // 就这样吧
         }
         return null;
     }

@@ -24,7 +24,7 @@ public class GrassClientEvents {
                 () -> {
                     ItemBlockRenderTypes.setRenderLayer(
                             GrassBlocks.WEEDS_BLOCK.get(), RenderType.cutout()
-                    );
+                    ); // 摆了, 又不是不能用 (～￣▽￣)～
                 }
         );
     }

@@ -24,7 +24,7 @@ import top.alittlebot.grass_craft.effect.GrassEffects;
 @Mixin(LivingEntityRenderer.class)
 public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extends EntityModel<T>> extends EntityRenderer<T> implements RenderLayerParent<T, M> {
     /*
-    * 十分地好玩，快去试试吧 \(￣︶￣*\))
+    * 十分地好玩, 快去试试吧 \(￣︶￣*\))
     */
 
     protected LivingEntityRendererMixin(EntityRendererProvider.Context context) {
@@ -39,7 +39,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
             double blockCenterY = entity.getY();
             double blockCenterZ = entity.getZ() - 0.5;
             entity.setBoundingBox(new AABB(blockCenterX, blockCenterY, blockCenterZ,
-                    blockCenterX + 0.99D, blockCenterY + 0.99D, blockCenterZ + 0.99D));  // 只能写成0.99D，不然没办法塞进一格空间里
+                    blockCenterX + 0.99D, blockCenterY + 0.99D, blockCenterZ + 0.99D));  // 只能写成0.99D, 不然没办法塞进一格空间里
 
             // 将玩家位置移动到方块的中心，以调整视角
             entity.setPosRaw(blockCenterX + 0.5, blockCenterY, blockCenterZ + 0.5);
