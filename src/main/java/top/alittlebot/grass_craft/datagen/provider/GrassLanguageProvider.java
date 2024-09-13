@@ -4,7 +4,7 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import top.alittlebot.grass_craft.GrassCraft;
 import top.alittlebot.grass_craft.effect.GrassEffects;
-import top.alittlebot.grass_craft.GrassCreativeTab;
+import top.alittlebot.grass_craft.ui.GrassCreativeTab;
 import top.alittlebot.grass_craft.entity.GrassEntity;
 import top.alittlebot.grass_craft.item.GrassItems;
 import top.alittlebot.grass_craft.item.potion.GrassPotions;
@@ -28,8 +28,11 @@ public class GrassLanguageProvider {
             this.add(GrassItems.GRASS_MOB_SPAWN_EGG_ITEM.get(), "Grass Mob Spawn Egg");
             this.add(GrassItems.GRASS_ON_A_STICK_ITEM.get(), "Grass on a Stick");
             this.add(GrassItems.WEEDS_ITEM.get(), "Weeds");
+            this.add(GrassItems.GRASS_FISH_ITEM.get(), "Grass Fish");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "Grass TNT");
+
+            this.add(GrassItems.VANILLA_ROD_ITEM.get(), "Vanilla Rod");
 
             this.add(GrassEffects.GROW_GRASS.get(), "Grow Grass");
             this.add(GrassEffects.TO_GRASS.get(), "To Grass");
@@ -59,6 +62,7 @@ public class GrassLanguageProvider {
             this.add(GrassEntity.GRASS_MOB_ENTITY.get(), "Grass Mob");
 
             this.add("grass_craft.tooltip.vanilla_glove", "Idea from Mafuyu33, only works on grass");
+            this.add("grass_craft.tooltip.vanilla_rod", "That must be fun ヾ(≧▽≦*)o");
 
             this.add(GrassCreativeTab.GRASS_TAB_ID, "Grass Craft");
         }
@@ -82,8 +86,11 @@ public class GrassLanguageProvider {
             this.add(GrassItems.GRASS_MOB_SPAWN_EGG_ITEM.get(), "草草草刷怪蛋");
             this.add(GrassItems.GRASS_ON_A_STICK_ITEM.get(), "草钓竿");
             this.add(GrassItems.WEEDS_ITEM.get(), "杂草");
+            this.add(GrassItems.GRASS_FISH_ITEM.get(), "草鱼");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "香草TNT");
+
+            this.add(GrassItems.VANILLA_ROD_ITEM.get(), "香草烛");
 
             this.add(GrassEffects.GROW_GRASS.get(), "生草");
             this.add(GrassEffects.TO_GRASS.get(), "变草");
@@ -113,6 +120,7 @@ public class GrassLanguageProvider {
             this.add(GrassEntity.GRASS_MOB_ENTITY.get(), "草草草");
 
             this.add("grass_craft.tooltip.vanilla_glove", "想法来自马夫鱼33, 只能对草起作用");
+            this.add("grass_craft.tooltip.vanilla_rod", "那一定很好玩吧…… ヾ(≧▽≦*)o");
 
             this.add(GrassCreativeTab.GRASS_TAB_ID, "草工艺");
         }

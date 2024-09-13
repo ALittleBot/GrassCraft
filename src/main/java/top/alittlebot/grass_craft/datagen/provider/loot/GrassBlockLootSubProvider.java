@@ -30,6 +30,7 @@ public class GrassBlockLootSubProvider extends BlockLootSubProvider {
                         .setProperties(StatePropertiesPredicate.Builder.properties()
                                 .hasProperty(WeedsBlock.AGE, WeedsBlock.MAX_AGE)) // 当作物达到最大年龄时
         ));
+        dropSelf(GrassBlocks.VANILLA_ROD_BLOCK.get());
     }
 
     @Override

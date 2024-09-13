@@ -10,10 +10,10 @@ import top.alittlebot.grass_craft.entity.GrassEntity;
 import top.alittlebot.grass_craft.event.GrassRegisterBrewingRecipesEvent;
 import top.alittlebot.grass_craft.item.GrassItems;
 import top.alittlebot.grass_craft.item.potion.GrassPotions;
+import top.alittlebot.grass_craft.ui.GrassCreativeTab;
 
 @Mod(GrassCraft.MOD_ID)
 public class GrassCraft {
-
     public static final String MOD_ID = "grass_craft";
 
     public GrassCraft(IEventBus modEventBus) {

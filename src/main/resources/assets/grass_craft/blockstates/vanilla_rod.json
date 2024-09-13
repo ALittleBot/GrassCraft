@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "grass_craft:block/vanilla_rod",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "grass_craft:block/vanilla_rod",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "grass_craft:block/vanilla_rod",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "grass_craft:block/vanilla_rod",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "grass_craft:block/vanilla_rod"
+    },
+    "facing=west": {
+      "model": "grass_craft:block/vanilla_rod",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

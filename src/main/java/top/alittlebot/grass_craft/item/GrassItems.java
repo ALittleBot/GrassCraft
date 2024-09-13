@@ -22,18 +22,23 @@ public class GrassItems {
     public static final String VANILLA_PUREE_ID = "vanilla_puree";
     public static final String GRASS_MOB_SPAWN_EGG_ID = "grass_mob_spawn_egg";
     public static final String GRASS_ON_A_STICK_ID = "grass_on_a_stick";
+    public static final String GRASS_FISH_ID = "grass_fish";
 
     public static final DeferredHolder<Item, Item> GRASS_STICK_ITEM;
     public static final DeferredHolder<Item, Item> STAFF_OF_GRASS_ITEM;
     public static final DeferredHolder<Item, Item> GRASS_BALL_ITEM;
     public static final DeferredHolder<Item, Item> VANILLA_ITEM;
     public static final DeferredHolder<Item, Item> VANILLA_INGOT_ITEM;
-    public static final DeferredHolder<Item, Item> GRASS_TNT_ITEM;
     public static final DeferredHolder<Item, Item> VANILLA_GLOVE_ITEM;
     public static final DeferredHolder<Item, Item> VANILLA_PUREE_ITEM;
     public static final DeferredHolder<Item, Item> GRASS_MOB_SPAWN_EGG_ITEM;
     public static final DeferredHolder<Item, Item> GRASS_ON_A_STICK_ITEM;
+    public static final DeferredHolder<Item, Item> GRASS_FISH_ITEM;
+
+    public static final DeferredHolder<Item, Item> GRASS_TNT_ITEM;
     public static final DeferredHolder<Item, Item> WEEDS_ITEM;
+    public static final DeferredHolder<Item, Item> VANILLA_ROD_ITEM;
+    //public static final DeferredHolder<Item, Item> EMPERORS_NEW_GRASS_BLOCK_ITEM;
 
     static {
         GRASS_STICK_ITEM = ITEMS.register(GRASS_STICK_ID, () -> new Item(new Item.Properties()));
@@ -50,9 +55,13 @@ public class GrassItems {
                 .effect(() -> new MobEffectInstance(GrassEffects.GRASS_POISONING, 20 * 30, 1), 1.0F)
                 .build())));
 
-        GRASS_TNT_ITEM = ITEMS.register(GrassBlocks.GRASS_TNT_ID, () -> new BlockItem(GrassBlocks.GRASS_TNT_BLOCK.get(), new Item.Properties()));
         GRASS_MOB_SPAWN_EGG_ITEM = ITEMS.register(GRASS_MOB_SPAWN_EGG_ID, () -> new SpawnEggItem(GrassEntity.GRASS_MOB_ENTITY.get(), 0x395832, 0x98D982, new Item.Properties()));
         GRASS_ON_A_STICK_ITEM = ITEMS.register(GRASS_ON_A_STICK_ID, () -> new FoodOnAStickItem<>((new Item.Properties()).durability(25), GrassEntity.GRASS_MOB_ENTITY.get(), 7));
+        GRASS_FISH_ITEM = ITEMS.register(GRASS_FISH_ID, () -> new Item(new Item.Properties()));  // 这是什么? 我也不知道 (●'◡'●)
+
+        GRASS_TNT_ITEM = ITEMS.register(GrassBlocks.GRASS_TNT_ID, () -> new BlockItem(GrassBlocks.GRASS_TNT_BLOCK.get(), new Item.Properties()));
         WEEDS_ITEM = ITEMS.register(GrassBlocks.WEEDS_ID, () -> new BlockItem(GrassBlocks.WEEDS_BLOCK.get(), new Item.Properties()));
+        VANILLA_ROD_ITEM = ITEMS.register("vanilla_rod", () -> new VanillaRodItem(GrassBlocks.VANILLA_ROD_BLOCK.get(), new Item.Properties()));
+        //EMPERORS_NEW_GRASS_BLOCK_ITEM = ITEMS.register(GrassBlocks.EMPERORS_NEW_GRASS_BLOCK_ID, () -> new BlockItem(GrassBlocks.EMPERORS_NEW_GRASS_BLOCK.get(), new Item.Properties()));
     }
 }

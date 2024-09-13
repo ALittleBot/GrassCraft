@@ -3,7 +3,6 @@ package top.alittlebot.grass_craft.datagen.provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -30,12 +29,14 @@ public class GrassItemModelProvider {
             this.singleTexture(GrassItems.GRASS_ON_A_STICK_ID, ResourceLocation.withDefaultNamespace("item/handheld_rod"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.GRASS_ON_A_STICK_ID));
             this.withExistingParent(GrassItems.GRASS_MOB_SPAWN_EGG_ID, this.mcLoc("item/template_spawn_egg"));
             this.singleTexture(GrassBlocks.WEEDS_ID, ResourceLocation.withDefaultNamespace("item/generated"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassBlocks.WEEDS_ID));
+            this.singleTexture(GrassItems.GRASS_FISH_ID, ResourceLocation.withDefaultNamespace("item/generated"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.GRASS_FISH_ID));
             genBlockItemModel(GrassBlocks.GRASS_TNT_BLOCK);
+            genBlockItemModel(GrassBlocks.VANILLA_ROD_BLOCK);
         }
 
-        private ItemModelBuilder genBlockItemModel(DeferredHolder<Block, Block> block) {
+        private void genBlockItemModel(DeferredHolder<Block, Block> block) {
             String id = block.getId().getPath();
-            return withExistingParent(id, ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "block/" + id));
+            withExistingParent(id, ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "block/" + id));
         }
     }
 }

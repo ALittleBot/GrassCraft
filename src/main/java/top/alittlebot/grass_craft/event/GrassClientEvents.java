@@ -1,4 +1,4 @@
-package top.alittlebot.grass_craft;
+package top.alittlebot.grass_craft.event;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -8,6 +8,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import top.alittlebot.grass_craft.GrassCraft;
 import top.alittlebot.grass_craft.block.GrassBlocks;
 import top.alittlebot.grass_craft.entity.GrassEntity;
 import top.alittlebot.grass_craft.entity.GrassMobEntity;

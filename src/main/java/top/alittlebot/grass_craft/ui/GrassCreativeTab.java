@@ -1,4 +1,4 @@
-package top.alittlebot.grass_craft;
+package top.alittlebot.grass_craft.ui;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -7,6 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import top.alittlebot.grass_craft.GrassCraft;
 import top.alittlebot.grass_craft.item.GrassItems;
 
 public class GrassCreativeTab {
@@ -29,6 +30,7 @@ public class GrassCreativeTab {
                     output.accept(GrassItems.VANILLA_PUREE_ITEM.get());
                     output.accept(GrassItems.GRASS_MOB_SPAWN_EGG_ITEM.get());
                     output.accept(GrassItems.GRASS_ON_A_STICK_ITEM.get());
+                    output.accept(GrassItems.VANILLA_ROD_ITEM.get());
                 }).build());
     }
 }
