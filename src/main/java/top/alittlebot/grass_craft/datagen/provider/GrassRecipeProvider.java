@@ -51,6 +51,14 @@ public class GrassRecipeProvider {
                     .pattern("BB")
                     .unlockedBy(getHasName(GrassItems.VANILLA_INGOT_ITEM.get()), has(GrassItems.VANILLA_INGOT_ITEM.get()))
                     .save(recipeOutput);
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GrassItems.VANILLA_ROD_ITEM.get(), 4)
+                    .group(GrassCraft.MOD_ID)
+                    .define('A', Items.BLAZE_ROD)
+                    .define('B', GrassItems.VANILLA_INGOT_ITEM.get())
+                    .pattern("A")
+                    .pattern("B")
+                    .unlockedBy(getHasName(GrassItems.VANILLA_INGOT_ITEM.get()), has(GrassItems.VANILLA_INGOT_ITEM.get()))
+                    .save(recipeOutput);
 
 
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GrassItems.VANILLA_INGOT_ITEM.get(), 1)

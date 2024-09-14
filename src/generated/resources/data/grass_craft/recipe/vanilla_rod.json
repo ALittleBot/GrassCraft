@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "grass_craft",
+  "key": {
+    "A": {
+      "item": "minecraft:blaze_rod"
+    },
+    "B": {
+      "item": "grass_craft:vanilla_ingot"
+    }
+  },
+  "pattern": [
+    "A",
+    "B"
+  ],
+  "result": {
+    "count": 4,
+    "id": "grass_craft:vanilla_rod"
+  }
+}
