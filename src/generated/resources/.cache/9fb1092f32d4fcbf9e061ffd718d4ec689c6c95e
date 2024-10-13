@@ -1,5 +1,6 @@
-// 1.21	2024-09-14T20:42:55.2320304	Recipes
+// 1.21	2024-10-13T21:25:08.8738853	Recipes
 16438cc1beb28f3c6c4825e7745bf95911a118a7 data/grass_craft/advancement/recipes/misc/grass_ball.json
+4f2337d6218414b44c8b9724556f61a83ade8098 data/grass_craft/advancement/recipes/misc/grass_hat.json
 2ef93db78191f0b7651780ae687b842b7e6c8fa6 data/grass_craft/advancement/recipes/misc/grass_mob_spawn_egg.json
 099ff279db67daf1016ccbbbb19999a0599b1eb7 data/grass_craft/advancement/recipes/misc/grass_on_a_stick.json
 45cdb1122154d574cc5c62556d1c2fe1bec5cbe9 data/grass_craft/advancement/recipes/misc/grass_stick.json
@@ -11,6 +12,7 @@
 080c5e4a4a131453cd1ce3166dd92b33c28f1bf1 data/grass_craft/advancement/recipes/misc/vanilla_puree.json
 15d3d4257f03a9c8506b6ad55fef5f6a789920bb data/grass_craft/advancement/recipes/misc/vanilla_rod.json
 8a89640440148064673d04fabb10909a0260c0aa data/grass_craft/recipe/grass_ball.json
+bd6f53fa907b634082e84e08cf6e8c4b73616083 data/grass_craft/recipe/grass_hat.json
 9a5ff206bd935d7373d908eb5748a55812e2504b data/grass_craft/recipe/grass_mob_spawn_egg.json
 6defa1e432f737215ea8beb6db53c1e4009af291 data/grass_craft/recipe/grass_on_a_stick.json
 4cd2b80d25fd4a0304f1927defcc35a3ec2a3fbc data/grass_craft/recipe/grass_stick.json

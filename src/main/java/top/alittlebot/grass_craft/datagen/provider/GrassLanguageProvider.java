@@ -29,6 +29,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.GRASS_ON_A_STICK_ITEM.get(), "Grass on a Stick");
             this.add(GrassItems.WEEDS_ITEM.get(), "Weeds");
             this.add(GrassItems.GRASS_FISH_ITEM.get(), "Grass Fish");
+            this.add(GrassItems.GRASS_HAT_ITEM.get(), "Grass Hat");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "Grass TNT");
 
@@ -87,6 +88,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.GRASS_ON_A_STICK_ITEM.get(), "草钓竿");
             this.add(GrassItems.WEEDS_ITEM.get(), "杂草");
             this.add(GrassItems.GRASS_FISH_ITEM.get(), "草鱼");
+            this.add(GrassItems.GRASS_HAT_ITEM.get(), "草帽");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "香草TNT");
 

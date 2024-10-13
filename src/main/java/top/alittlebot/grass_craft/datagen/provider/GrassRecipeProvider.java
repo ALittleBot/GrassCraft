@@ -59,6 +59,13 @@ public class GrassRecipeProvider {
                     .pattern("B")
                     .unlockedBy(getHasName(GrassItems.VANILLA_INGOT_ITEM.get()), has(GrassItems.VANILLA_INGOT_ITEM.get()))
                     .save(recipeOutput);
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GrassItems.GRASS_HAT_ITEM.get(), 1)
+                    .group(GrassCraft.MOD_ID)
+                    .define('A', Items.WHEAT)
+                    .pattern("AAA")
+                    .pattern("A A")
+                    .unlockedBy(getHasName(Items.WHEAT), has(Items.WHEAT))
+                    .save(recipeOutput);
 
 
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GrassItems.VANILLA_INGOT_ITEM.get(), 1)
