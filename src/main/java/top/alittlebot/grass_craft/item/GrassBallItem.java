@@ -26,7 +26,7 @@ public class GrassBallItem extends Item implements ProjectileItem {
         ItemStack itemstack = player.getItemInHand(hand);
         level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
         if (!level.isClientSide) {
-            GrassBallEntity grassBallEntity = new GrassBallEntity(level, player);
+            GrassBallEntity grassBallEntity = new GrassBallEntity(player, level);
             grassBallEntity.setItem(itemstack);
             grassBallEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
             level.addFreshEntity(grassBallEntity);
@@ -38,7 +38,7 @@ public class GrassBallItem extends Item implements ProjectileItem {
     }
 
     public @NotNull Projectile asProjectile(@NotNull Level level, Position pos, @NotNull ItemStack stack, @NotNull Direction direction) {
-        GrassBallEntity grassBallEntity = new GrassBallEntity(level, pos.x(), pos.y(), pos.z());
+        GrassBallEntity grassBallEntity = new GrassBallEntity(pos.x(), pos.y(), pos.z(), level);
         grassBallEntity.setItem(stack);
         return grassBallEntity;
     }

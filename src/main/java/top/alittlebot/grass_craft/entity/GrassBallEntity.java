@@ -1,11 +1,17 @@
 package top.alittlebot.grass_craft.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.Snowball;
+import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,30 +21,34 @@ import org.jetbrains.annotations.NotNull;
 import top.alittlebot.grass_craft.effect.GrassEffects;
 import top.alittlebot.grass_craft.item.GrassItems;
 
-public class GrassBallEntity extends Snowball {
-    public GrassBallEntity(Level level, LivingEntity shooter) {
-        super(level, shooter);
+public class GrassBallEntity extends ThrowableItemProjectile {
+
+    public GrassBallEntity(EntityType<? extends ThrowableItemProjectile> entityType, Level level) {
+        super(entityType, level);
     }
 
-    public GrassBallEntity(Level level, double x, double y, double z) {
-        super(level, x, y, z);
+    public GrassBallEntity(double x, double y, double z, Level level) {
+        super(GrassEntity.GRASS_BALL_ENTITY.get(), x, y, z, level);
     }
 
-    @Override
+    public GrassBallEntity(LivingEntity shooter, Level level) {
+        super(GrassEntity.GRASS_BALL_ENTITY.get(), shooter, level);
+    }
+
     protected @NotNull Item getDefaultItem() {
         return GrassItems.GRASS_BALL_ITEM.get();
     }
 
-    @Override
     protected void onHitEntity(@NotNull EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
         if (entity instanceof LivingEntity livingEntity) {
             livingEntity.addEffect(new MobEffectInstance(GrassEffects.GROW_GRASS, 30 * 20, 1));
         }
+        int i = entity instanceof Blaze ? 3 : 0;
+        entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float)i);
     }
 
-    @Override
     protected void onHit(@NotNull HitResult result) {
         super.onHit(result);
         if (!this.level().isClientSide) {
@@ -57,5 +67,21 @@ public class GrassBallEntity extends Snowball {
                 }
             }
         }
+    }
+
+    private ParticleOptions getParticle() {
+        ItemStack itemstack = this.getItem();
+        return new ItemParticleOption(ParticleTypes.ITEM, itemstack);
+    }
+
+    public void handleEntityEvent(byte id) {
+        if (id == 3) {
+            ParticleOptions particleoptions = this.getParticle();
+
+            for(int i = 0; i < 8; ++i) {
+                this.level().addParticle(particleoptions, this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
+            }
+        }
+
     }
 }

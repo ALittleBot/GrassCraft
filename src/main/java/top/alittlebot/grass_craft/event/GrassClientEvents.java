@@ -3,6 +3,7 @@ package top.alittlebot.grass_craft.event;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -21,6 +22,7 @@ public class GrassClientEvents {
     public static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(GrassEntity.GRASS_TNT_ENTITY.get(), GrassTNTRenderer::new);
         EntityRenderers.register(GrassEntity.GRASS_MOB_ENTITY.get(), GrassMobRenderer::new);
+        EntityRenderers.register(GrassEntity.GRASS_BALL_ENTITY.get(), ThrownItemRenderer::new);
         event.enqueueWork(
                 () -> {
                     ItemBlockRenderTypes.setRenderLayer(
