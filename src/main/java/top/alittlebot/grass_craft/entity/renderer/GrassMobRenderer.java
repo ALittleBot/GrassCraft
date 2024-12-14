@@ -10,8 +10,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 import top.alittlebot.grass_craft.entity.GrassMobEntity;
 
+@OnlyIn(Dist.CLIENT)
 public class GrassMobRenderer extends EntityRenderer<GrassMobEntity> {
 
     private static final ResourceLocation GRASS_BLOCK_LOCATION = ResourceLocation.withDefaultNamespace("textures/block/grass_block_side.png");  // 不知道有什么用，随便填一个好了
@@ -21,7 +25,7 @@ public class GrassMobRenderer extends EntityRenderer<GrassMobEntity> {
     }
 
     @Override
-    public void render(GrassMobEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(@NotNull GrassMobEntity entity, float entityYaw, float partialTick, PoseStack poseStack, @NotNull MultiBufferSource bufferSource, int packedLight) {
         // 复用草中毒的渲染代码怎么了
         ItemStack grassBlock = new ItemStack(Blocks.GRASS_BLOCK);
         poseStack.pushPose();
@@ -33,7 +37,7 @@ public class GrassMobRenderer extends EntityRenderer<GrassMobEntity> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(GrassMobEntity grassTNT) {
+    public @NotNull ResourceLocation getTextureLocation(@NotNull GrassMobEntity grassTNT) {
         return GRASS_BLOCK_LOCATION;
     }
 }

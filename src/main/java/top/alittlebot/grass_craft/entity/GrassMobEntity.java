@@ -16,7 +16,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
@@ -63,12 +62,6 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-    }
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 10.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.25);
     }
 
     @Nullable
@@ -193,7 +186,7 @@ public class GrassMobEntity extends Animal implements ItemSteerable, Saddleable 
         return (float) (this.getAttributeValue(Attributes.MOVEMENT_SPEED) * 0.25);
     }
 
-    /*
+    /* 这是一个大坑
     @Override
     public void tick() {
         super.tick();
