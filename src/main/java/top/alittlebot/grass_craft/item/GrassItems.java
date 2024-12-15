@@ -25,6 +25,7 @@ public class GrassItems {
     public static final String GRASS_ON_A_STICK_ID = "grass_on_a_stick";
     public static final String GRASS_FISH_ID = "grass_fish";
     public static final String GRASS_HAT_ID = "grass_hat";
+    public static final String GRASS_LLAMA_ID = "grass_llama_spawn_egg";
 
     public static final DeferredHolder<Item, Item> GRASS_STICK_ITEM;
     public static final DeferredHolder<Item, Item> STAFF_OF_GRASS_ITEM;
@@ -37,11 +38,11 @@ public class GrassItems {
     public static final DeferredHolder<Item, Item> GRASS_ON_A_STICK_ITEM;
     public static final DeferredHolder<Item, Item> GRASS_FISH_ITEM;
     public static final DeferredHolder<Item, Item> GRASS_HAT_ITEM;
+    public static final DeferredHolder<Item, Item> GRASS_LLAMA_SPAWN_EGG_ITEM;
 
     public static final DeferredHolder<Item, Item> GRASS_TNT_ITEM;
     public static final DeferredHolder<Item, Item> WEEDS_ITEM;
     public static final DeferredHolder<Item, Item> VANILLA_ROD_ITEM;
-    //public static final DeferredHolder<Item, Item> EMPERORS_NEW_GRASS_BLOCK_ITEM;
 
     static {
         GRASS_STICK_ITEM = ITEMS.register(GRASS_STICK_ID, () -> new Item(new Item.Properties()));
@@ -65,7 +66,7 @@ public class GrassItems {
         GRASS_TNT_ITEM = ITEMS.register(GrassBlocks.GRASS_TNT_ID, () -> new BlockItem(GrassBlocks.GRASS_TNT_BLOCK.get(), new Item.Properties()));
         WEEDS_ITEM = ITEMS.register(GrassBlocks.WEEDS_ID, () -> new BlockItem(GrassBlocks.WEEDS_BLOCK.get(), new Item.Properties()));
         VANILLA_ROD_ITEM = ITEMS.register("vanilla_rod", () -> new VanillaRodItem(GrassBlocks.VANILLA_ROD_BLOCK.get(), new Item.Properties()));
-        //EMPERORS_NEW_GRASS_BLOCK_ITEM = ITEMS.register(GrassBlocks.EMPERORS_NEW_GRASS_BLOCK_ID, () -> new BlockItem(GrassBlocks.EMPERORS_NEW_GRASS_BLOCK.get(), new Item.Properties()));
         GRASS_HAT_ITEM = ITEMS.register(GRASS_HAT_ID, () -> new GrassHatItem(new Item.Properties().stacksTo(1)));
+        GRASS_LLAMA_SPAWN_EGG_ITEM = ITEMS.register(GRASS_LLAMA_ID, () -> new DeferredSpawnEggItem(GrassEntity.GRASS_LLAMA_ENTITY, 0x207E14, 0xB3FAB6, new Item.Properties()));
     }
 }

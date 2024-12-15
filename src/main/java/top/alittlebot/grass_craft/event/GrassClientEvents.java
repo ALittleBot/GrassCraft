@@ -4,7 +4,6 @@ import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.LlamaRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.animal.horse.Llama;
@@ -18,6 +17,7 @@ import top.alittlebot.grass_craft.block.GrassBlocks;
 import top.alittlebot.grass_craft.entity.GrassEntity;
 import top.alittlebot.grass_craft.entity.renderer.GrassMobRenderer;
 import top.alittlebot.grass_craft.entity.renderer.GrassTNTRenderer;
+import top.alittlebot.grass_craft.entity.renderer.GrassLlamaRenderer;
 
 @EventBusSubscriber(modid = GrassCraft.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class GrassClientEvents {
@@ -26,7 +26,7 @@ public class GrassClientEvents {
         EntityRenderers.register(GrassEntity.GRASS_TNT_ENTITY.get(), GrassTNTRenderer::new);
         EntityRenderers.register(GrassEntity.GRASS_MOB_ENTITY.get(), GrassMobRenderer::new);
         EntityRenderers.register(GrassEntity.GRASS_BALL_ENTITY.get(), ThrownItemRenderer::new);
-        EntityRenderers.register(GrassEntity.GRASS_LLAMA_ENTITY.get(), (context) -> new LlamaRenderer(context, ModelLayers.LLAMA));
+        EntityRenderers.register(GrassEntity.GRASS_LLAMA_ENTITY.get(), (context) -> new GrassLlamaRenderer(context, ModelLayers.LLAMA));
         event.enqueueWork(
                 () -> {
                     ItemBlockRenderTypes.setRenderLayer(

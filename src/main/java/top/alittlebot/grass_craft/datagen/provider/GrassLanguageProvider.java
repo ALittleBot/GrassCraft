@@ -30,6 +30,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.WEEDS_ITEM.get(), "Weeds");
             this.add(GrassItems.GRASS_FISH_ITEM.get(), "Grass Fish");
             this.add(GrassItems.GRASS_HAT_ITEM.get(), "Grass Hat");
+            this.add(GrassItems.GRASS_LLAMA_SPAWN_EGG_ITEM.get(), "Grass Llama Spawn Egg");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "Grass TNT");
 
@@ -61,6 +62,8 @@ public class GrassLanguageProvider {
 
             this.add(GrassEntity.GRASS_TNT_ENTITY.get(), "Primed Grass TNT");
             this.add(GrassEntity.GRASS_MOB_ENTITY.get(), "Grass Mob");
+            this.add(GrassEntity.GRASS_BALL_ENTITY.get(), "Grass Ball");
+            this.add(GrassEntity.GRASS_LLAMA_ENTITY.get(), "Grass Llama");
 
             this.add("grass_craft.tooltip.vanilla_glove", "Idea from Mafuyu33, only works on grass");
             this.add("grass_craft.tooltip.vanilla_rod", "That must be fun ヾ(≧▽≦*)o");
@@ -89,6 +92,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.WEEDS_ITEM.get(), "杂草");
             this.add(GrassItems.GRASS_FISH_ITEM.get(), "草鱼");
             this.add(GrassItems.GRASS_HAT_ITEM.get(), "草帽");
+            this.add(GrassItems.GRASS_LLAMA_SPAWN_EGG_ITEM.get(), "草泥马刷怪蛋");
 
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "香草TNT");
 
@@ -120,6 +124,8 @@ public class GrassLanguageProvider {
 
             this.add(GrassEntity.GRASS_TNT_ENTITY.get(), "点燃的香草TNT");
             this.add(GrassEntity.GRASS_MOB_ENTITY.get(), "草草草");
+            this.add(GrassEntity.GRASS_BALL_ENTITY.get(), "草球");
+            this.add(GrassEntity.GRASS_LLAMA_ENTITY.get(), "草泥马");
 
             this.add("grass_craft.tooltip.vanilla_glove", "想法来自马夫鱼33, 只能对草起作用");
             this.add("grass_craft.tooltip.vanilla_rod", "那一定很好玩吧…… ヾ(≧▽≦*)o");

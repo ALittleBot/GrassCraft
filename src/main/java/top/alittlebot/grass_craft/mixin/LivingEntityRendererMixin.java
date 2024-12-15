@@ -9,7 +9,6 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -21,7 +20,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import top.alittlebot.grass_craft.effect.GrassEffects;
-import top.alittlebot.grass_craft.entity.GrassEntity;
 import top.alittlebot.grass_craft.entity.GrassLlamaEntity;
 
 @Mixin(LivingEntityRenderer.class)
@@ -36,6 +34,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
 
     @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At("HEAD"), cancellable = true)
     public void render(T entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight, CallbackInfo ci) {
+        ItemStack grassBlock = new ItemStack(Blocks.GRASS_BLOCK);
         if (entity.hasEffect(GrassEffects.TO_GRASS) && entity instanceof Player) {
             // 将玩家的碰撞箱设置为1x1x1方块大小并居中
             double blockCenterX = entity.getX() - 0.5;
@@ -48,8 +47,6 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
             entity.setPosRaw(blockCenterX + 0.5, blockCenterY, blockCenterZ + 0.5);
 
             // 在玩家位置渲染草方块
-            ItemStack grassBlock = new ItemStack(Blocks.GRASS_BLOCK);
-
             poseStack.pushPose();
             poseStack.translate(0.0, -0.25, 0.0); // 根据需要调整平移
             poseStack.scale(4.0F, 4.0F, 4.0F);  // 缩放至覆盖整个碰撞箱
@@ -59,7 +56,6 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
             poseStack.popPose();
             ci.cancel();
         } else if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.hasEffect(GrassEffects.GRASS_POISONING)) {
-            ItemStack grassBlock = new ItemStack(Blocks.GRASS_BLOCK);
             poseStack.pushPose();
             poseStack.translate(0.0, 0.0, 0.0); // 根据需要调整平移
             poseStack.scale(4.0F, 4.0F, 4.0F);  // 缩放至覆盖整个碰撞箱
@@ -68,6 +64,21 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
             ci.cancel();
         } else {
             super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
+        }
+
+        if (entity instanceof GrassLlamaEntity) {
+            poseStack.pushPose();
+            if (entity.isBaby()) {
+                // 如果是幼年羊驼，调整草方块的位置和比例
+                poseStack.translate(0, 0.75f, 0); // 调整到幼年羊驼的头部
+                poseStack.scale(2f, 2f, 2f); // 草方块更小
+            } else {
+                // 成年羊驼的草方块渲染
+                poseStack.translate(0, 0.5f, 0); // 移动到成年羊驼的头部
+                poseStack.scale(4f, 4f, 4f); // 草方块正常大小
+            }
+            Minecraft.getInstance().getItemRenderer().renderStatic(grassBlock, ItemDisplayContext.GROUND, packedLight, OverlayTexture.NO_OVERLAY, poseStack, buffer, null, 0);
+            poseStack.popPose();
         }
     }
 }

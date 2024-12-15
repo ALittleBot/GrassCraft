@@ -39,7 +39,7 @@ public class GrassEntity {
                 .clientTrackingRange(4)
                 .updateInterval(10)
                 .build(GRASS_BALL_ENTITY_ID));
-        GRASS_LLAMA_ENTITY = ENTITIES.register(GRASS_LLAMA_ENTITY_ID, () -> EntityType.Builder.<GrassLlamaEntity>of(GrassLlamaEntity::new, MobCategory.CREATURE)
+        GRASS_LLAMA_ENTITY = ENTITIES.register(GRASS_LLAMA_ENTITY_ID, () -> EntityType.Builder.of(GrassLlamaEntity::new, MobCategory.CREATURE)
                 .sized(0.9F, 1.87F)
                 .eyeHeight(1.7765F)
                 .passengerAttachments(new Vec3(0.0, 1.37, -0.3))

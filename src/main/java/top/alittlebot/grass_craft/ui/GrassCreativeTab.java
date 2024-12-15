@@ -32,6 +32,7 @@ public class GrassCreativeTab {
                     output.accept(GrassItems.GRASS_ON_A_STICK_ITEM.get());
                     output.accept(GrassItems.VANILLA_ROD_ITEM.get());
                     output.accept(GrassItems.GRASS_HAT_ITEM.get());
+                    output.accept(GrassItems.GRASS_LLAMA_SPAWN_EGG_ITEM.get());
                 }).build());
     }
 }

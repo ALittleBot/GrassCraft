@@ -43,7 +43,7 @@ public class GrassBallEntity extends ThrowableItemProjectile {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
         if (entity instanceof LivingEntity livingEntity) {
-            livingEntity.addEffect(new MobEffectInstance(GrassEffects.GROW_GRASS, 30 * 20, 1));
+            livingEntity.addEffect(new MobEffectInstance(GrassEffects.GROW_GRASS, 30 * 20, 0));
         }
         int i = entity instanceof Blaze ? 3 : 0;
         entity.hurt(this.damageSources().thrown(this, this.getOwner()), (float)i);

@@ -3,6 +3,7 @@
   "package": "top.alittlebot.grass_craft.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "LlamaMixin"
   ],
   "injectors": {
     "defaultRequire": 1
