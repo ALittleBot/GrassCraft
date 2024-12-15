@@ -7,6 +7,7 @@ import top.alittlebot.grass_craft.block.GrassBlocks;
 import top.alittlebot.grass_craft.datagen.GrassProvider;
 import top.alittlebot.grass_craft.effect.GrassEffects;
 import top.alittlebot.grass_craft.entity.GrassEntity;
+import top.alittlebot.grass_craft.event.GrassLlamaEvent;
 import top.alittlebot.grass_craft.event.GrassRegisterBrewingRecipesEvent;
 import top.alittlebot.grass_craft.item.GrassItems;
 import top.alittlebot.grass_craft.item.potion.GrassPotions;
@@ -25,6 +26,7 @@ public class GrassCraft {
         GrassCreativeTab.TABS.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(GrassRegisterBrewingRecipesEvent.class);
+        NeoForge.EVENT_BUS.register(GrassLlamaEvent.class);
 
         modEventBus.addListener(GrassProvider::onGatherData);
     }

@@ -35,7 +35,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
     @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At("HEAD"), cancellable = true)
     public void render(T entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight, CallbackInfo ci) {
         ItemStack grassBlock = new ItemStack(Blocks.GRASS_BLOCK);
-        if (entity.hasEffect(GrassEffects.TO_GRASS) && entity instanceof Player) {
+        if (entity.hasEffect(GrassEffects.TO_GRASS) && entity instanceof Player) {  // 处理药水效果
             // 将玩家的碰撞箱设置为1x1x1方块大小并居中
             double blockCenterX = entity.getX() - 0.5;
             double blockCenterY = entity.getY();
@@ -66,7 +66,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
             super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
         }
 
-        if (entity instanceof GrassLlamaEntity) {
+        if (entity instanceof GrassLlamaEntity) {  // 处理草泥马
             poseStack.pushPose();
             if (entity.isBaby()) {
                 // 如果是幼年羊驼，调整草方块的位置和比例
