@@ -35,6 +35,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "Grass TNT");
 
             this.add(GrassItems.VANILLA_ROD_ITEM.get(), "Vanilla Rod");
+            this.add(GrassItems.COOKED_GRASS_BLOCK_ITEM.get(), "Cooked Grass Block");
 
             this.add(GrassEffects.GROW_GRASS.get(), "Grow Grass");
             this.add(GrassEffects.TO_GRASS.get(), "To Grass");
@@ -97,6 +98,7 @@ public class GrassLanguageProvider {
             this.add(GrassItems.GRASS_TNT_ITEM.get(), "香草TNT");
 
             this.add(GrassItems.VANILLA_ROD_ITEM.get(), "香草烛");
+            this.add(GrassItems.COOKED_GRASS_BLOCK_ITEM.get(), "熟草方块");
 
             this.add(GrassEffects.GROW_GRASS.get(), "生草");
             this.add(GrassEffects.TO_GRASS.get(), "变草");
