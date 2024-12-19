@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "grass_craft:block/cooked_grass_block"
+    }
+  }
+}

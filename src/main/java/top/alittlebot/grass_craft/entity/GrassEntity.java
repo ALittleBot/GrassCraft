@@ -30,7 +30,7 @@ public class GrassEntity {
                         .clientTrackingRange(10)
                         .build(GRASS_TNT_ENTITY_ID));
 
-        GRASS_MOB_ENTITY = ENTITIES.register(GRASS_MOB_ENTITY_ID, () -> EntityType.Builder.of(GrassMobEntity::new, MobCategory.MISC)
+        GRASS_MOB_ENTITY = ENTITIES.register(GRASS_MOB_ENTITY_ID, () -> EntityType.Builder.of(GrassMobEntity::new, MobCategory.CREATURE)
                 .fireImmune()
                 .sized(1.0F, 1.0F)
                 .build(GRASS_TNT_ENTITY_ID));

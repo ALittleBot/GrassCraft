@@ -21,16 +21,25 @@ public class GrassBlockProvider {
 
         @Override
         protected void registerStatesAndModels() {
-            Block block = GrassBlocks.GRASS_TNT_BLOCK.get();
-            ResourceLocation bottomTexture = modLoc("block/grass_tnt_bottom");
-            ResourceLocation topTexture = modLoc("block/grass_tnt_top");
-            ResourceLocation sideTexture = modLoc("block/grass_tnt_side");
-            ResourceLocation blockName = BuiltInRegistries.BLOCK.getKey(block);
-            simpleBlock(block, models().cubeBottomTop(
-                    blockName.getPath(),
-                    sideTexture,
-                    bottomTexture,
-                    topTexture
+            ResourceLocation grassTNTBottomTexture = modLoc("block/grass_tnt_bottom");
+            ResourceLocation grassTNTTopTexture = modLoc("block/grass_tnt_top");
+            ResourceLocation grassTNTSideTexture = modLoc("block/grass_tnt_side");
+            ResourceLocation grassTNTBlockName = BuiltInRegistries.BLOCK.getKey(GrassBlocks.GRASS_TNT_BLOCK.get());
+            ResourceLocation cookedGrassBlockBottomTexture = modLoc("block/cooked_grass_block_bottom");
+            ResourceLocation cookedGrassBlockSideTexture = modLoc("block/cooked_grass_block_side");
+            ResourceLocation cookedGrassBlockTopTexture = modLoc("block/cooked_grass_block_top");
+            ResourceLocation cookedGrassBlockBlockName = BuiltInRegistries.BLOCK.getKey(GrassBlocks.COOKED_GRASS_BLOCK.get());
+            simpleBlock(GrassBlocks.GRASS_TNT_BLOCK.get(), models().cubeBottomTop(
+                    grassTNTBlockName.getPath(),
+                    grassTNTSideTexture,
+                    grassTNTBottomTexture,
+                    grassTNTTopTexture
+            ));
+            simpleBlock(GrassBlocks.COOKED_GRASS_BLOCK.get(), models().cubeBottomTop(
+                    cookedGrassBlockBlockName.getPath(),
+                    cookedGrassBlockSideTexture,
+                    cookedGrassBlockBottomTexture,
+                    cookedGrassBlockTopTexture
             ));
             registerCropBlockModels(GrassBlocks.WEEDS_BLOCK.get(), GrassBlocks.WEEDS_ID);
         }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "grass_craft:cooked_grass_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "grass_craft:blocks/cooked_grass_block"
+}

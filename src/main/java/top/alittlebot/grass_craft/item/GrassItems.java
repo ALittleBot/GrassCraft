@@ -43,6 +43,7 @@ public class GrassItems {
     public static final DeferredHolder<Item, Item> GRASS_TNT_ITEM;
     public static final DeferredHolder<Item, Item> WEEDS_ITEM;
     public static final DeferredHolder<Item, Item> VANILLA_ROD_ITEM;
+    public static final DeferredHolder<Item, Item> COOKED_GRASS_BLOCK_ITEM;
 
     static {
         GRASS_STICK_ITEM = ITEMS.register(GRASS_STICK_ID, () -> new Item(new Item.Properties()));
@@ -62,11 +63,12 @@ public class GrassItems {
         GRASS_MOB_SPAWN_EGG_ITEM = ITEMS.register(GRASS_MOB_SPAWN_EGG_ID, () -> new DeferredSpawnEggItem(GrassEntity.GRASS_MOB_ENTITY, 0x395832, 0x98D982, new Item.Properties()));
         GRASS_ON_A_STICK_ITEM = ITEMS.register(GRASS_ON_A_STICK_ID, () -> new FoodOnAStickItem<>((new Item.Properties()).durability(25), GrassEntity.GRASS_MOB_ENTITY.get(), 7));
         GRASS_FISH_ITEM = ITEMS.register(GRASS_FISH_ID, () -> new Item(new Item.Properties()));  // 这是什么? 我也不知道 (●'◡'●)
+        GRASS_HAT_ITEM = ITEMS.register(GRASS_HAT_ID, () -> new GrassHatItem(new Item.Properties().stacksTo(1)));
+        GRASS_LLAMA_SPAWN_EGG_ITEM = ITEMS.register(GRASS_LLAMA_ID, () -> new DeferredSpawnEggItem(GrassEntity.GRASS_LLAMA_ENTITY, 0x207E14, 0xB3FAB6, new Item.Properties()));
 
         GRASS_TNT_ITEM = ITEMS.register(GrassBlocks.GRASS_TNT_ID, () -> new BlockItem(GrassBlocks.GRASS_TNT_BLOCK.get(), new Item.Properties()));
         WEEDS_ITEM = ITEMS.register(GrassBlocks.WEEDS_ID, () -> new BlockItem(GrassBlocks.WEEDS_BLOCK.get(), new Item.Properties()));
-        VANILLA_ROD_ITEM = ITEMS.register("vanilla_rod", () -> new VanillaRodItem(GrassBlocks.VANILLA_ROD_BLOCK.get(), new Item.Properties()));
-        GRASS_HAT_ITEM = ITEMS.register(GRASS_HAT_ID, () -> new GrassHatItem(new Item.Properties().stacksTo(1)));
-        GRASS_LLAMA_SPAWN_EGG_ITEM = ITEMS.register(GRASS_LLAMA_ID, () -> new DeferredSpawnEggItem(GrassEntity.GRASS_LLAMA_ENTITY, 0x207E14, 0xB3FAB6, new Item.Properties()));
+        VANILLA_ROD_ITEM = ITEMS.register(GrassBlocks.VANILLA_ROD_ID, () -> new VanillaRodItem(GrassBlocks.VANILLA_ROD_BLOCK.get(), new Item.Properties()));
+        COOKED_GRASS_BLOCK_ITEM = ITEMS.register(GrassBlocks.COOKED_GRASS_BLOCK_ID, () -> new BlockItem(GrassBlocks.COOKED_GRASS_BLOCK.get(), new Item.Properties()));
     }
 }

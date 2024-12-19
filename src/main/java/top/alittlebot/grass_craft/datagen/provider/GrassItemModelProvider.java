@@ -33,6 +33,7 @@ public class GrassItemModelProvider {
             this.singleTexture(GrassItems.GRASS_FISH_ID, ResourceLocation.withDefaultNamespace("item/generated"), "layer0", ResourceLocation.fromNamespaceAndPath(GrassCraft.MOD_ID, "item/" + GrassItems.GRASS_FISH_ID));
             genBlockItemModel(GrassBlocks.GRASS_TNT_BLOCK);
             genBlockItemModel(GrassBlocks.VANILLA_ROD_BLOCK);
+            genBlockItemModel(GrassBlocks.COOKED_GRASS_BLOCK);
         }
 
         private void genBlockItemModel(DeferredHolder<Block, Block> block) {
