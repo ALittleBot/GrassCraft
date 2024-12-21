@@ -2,6 +2,7 @@ package top.alittlebot.grass_craft.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -69,6 +70,6 @@ public class GrassItems {
         GRASS_TNT_ITEM = ITEMS.register(GrassBlocks.GRASS_TNT_ID, () -> new BlockItem(GrassBlocks.GRASS_TNT_BLOCK.get(), new Item.Properties()));
         WEEDS_ITEM = ITEMS.register(GrassBlocks.WEEDS_ID, () -> new BlockItem(GrassBlocks.WEEDS_BLOCK.get(), new Item.Properties()));
         VANILLA_ROD_ITEM = ITEMS.register(GrassBlocks.VANILLA_ROD_ID, () -> new VanillaRodItem(GrassBlocks.VANILLA_ROD_BLOCK.get(), new Item.Properties()));
-        COOKED_GRASS_BLOCK_ITEM = ITEMS.register(GrassBlocks.COOKED_GRASS_BLOCK_ID, () -> new BlockItem(GrassBlocks.COOKED_GRASS_BLOCK.get(), new Item.Properties()));
+        COOKED_GRASS_BLOCK_ITEM = ITEMS.register(GrassBlocks.COOKED_GRASS_BLOCK_ID, () -> new BlockItem(GrassBlocks.COOKED_GRASS_BLOCK.get(), new Item.Properties().food(Foods.ROTTEN_FLESH)));
     }
 }

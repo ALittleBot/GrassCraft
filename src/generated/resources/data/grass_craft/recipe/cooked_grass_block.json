@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "grass_craft",
+  "ingredient": {
+    "item": "minecraft:grass_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "grass_craft:cooked_grass_block"
+  }
+}

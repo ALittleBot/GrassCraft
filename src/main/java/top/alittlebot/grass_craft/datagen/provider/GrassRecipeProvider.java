@@ -110,6 +110,16 @@ public class GrassRecipeProvider {
                     .group(GrassCraft.MOD_ID)
                     .unlockedBy(getHasName(Items.SHORT_GRASS), has(Items.SHORT_GRASS))
                     .save(recipeOutput);
+            SimpleCookingRecipeBuilder.smelting(
+                    Ingredient.of(Items.GRASS_BLOCK),
+                    RecipeCategory.MISC,
+                    GrassItems.COOKED_GRASS_BLOCK_ITEM.get(),
+                    0.1f,
+                    200
+            )
+                    .group(GrassCraft.MOD_ID)
+                    .unlockedBy(getHasName(Items.GRASS_BLOCK), has(Items.GRASS_BLOCK))
+                    .save(recipeOutput);
         }
     }
 }
